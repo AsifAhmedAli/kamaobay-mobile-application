@@ -1,0 +1,5 @@
+<svg id="play" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <path id="Vector" d="M15.738,7.317,1.867,15.682A1.232,1.232,0,0,1,0,14.632V5.3A5.291,5.291,0,0,1,7.933.713l5.355,3.08,2.438,1.4A1.235,1.235,0,0,1,15.738,7.317Z" transform="translate(4.667 3.883)" fill="#fff"/>
+  <path id="Vector-2" data-name="Vector" d="M14.9,5.746l-4.725,2.73L5.458,11.195a4.613,4.613,0,0,1-4.993-.21A1.153,1.153,0,0,1,.582,9.06L15.41.17a1.159,1.159,0,0,1,1.75.782A4.622,4.622,0,0,1,14.9,5.746Z" transform="translate(6.208 12.29)" fill="#fff"/>
+  <path id="Vector-3" data-name="Vector" d="M0,0H28V28H0Z" fill="none" opacity="0"/>
+</svg>
