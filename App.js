@@ -9,10 +9,10 @@ import {
 import { SafeAreaProvider } from "react-native-safe-area-context"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import HomeScreen from "./screens/HomeScreen"
-import ResetPassword from "./screens/ResetPassword"
-import SignUp from "./screens/SignUp"
-import SignIn from "./screens/SignIn"
 import tw from "twrnc"
+import SignInScreen from "./screens/SignInScreen"
+import ResetPasswordScreen from "./screens/ResetPasswordScreen"
+import SignUpScreen from "./screens/SignUpScreen"
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -31,18 +31,18 @@ export default function App() {
               options={{ headerShown: false }}
             />
             <Stack.Screen
-              name="SignIn"
-              component={SignIn}
+              name="SignInScreen"
+              component={SignInScreen}
               options={{ headerShown: false }}
             />
             <Stack.Screen
-              name="SignUp"
-              component={SignUp}
+              name="SignUpScreen"
+              component={SignUpScreen}
               options={{ headerShown: false }}
             />
             <Stack.Screen
-              name="ResetPassword"
-              component={ResetPassword}
+              name="ResetPasswordScreen"
+              component={ResetPasswordScreen}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
