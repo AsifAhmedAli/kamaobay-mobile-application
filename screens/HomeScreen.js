@@ -15,7 +15,8 @@ const HomeScreen = () => {
         <Intro />
         <Earning />
       </ScrollView>
-      <NavBar style={tw`flex-end`} />
+      <View onPress={()=>console.log("uhkojj")}><Text>hello</Text></View>
+      <NavBar style={tw`flex-end `}/>
     </SafeAreaView>
   )
 }

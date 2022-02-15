@@ -1,11 +1,11 @@
-import { Image, StyleSheet, Text, View } from "react-native"
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
 import { Icon } from "react-native-elements"
 import { useNavigation } from "@react-navigation/native"
 
 const NavBar = () => {
-   const navigation = useNavigation()
+  const navigation = useNavigation()
   return (
     <View
       style={tw`bg-white flex flex-row rounded-t-xl h-12 py-1 items-center justify-evenly shadow-xl`}
@@ -32,13 +32,13 @@ const NavBar = () => {
         />
         <Text style={tw`text-xs text-blue-900`}>Settings</Text>
       </View>
-      <View
+      <TouchableOpacity
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("SignInScreen")}
       >
         <Icon style={tw`p-1 w-10`} type="feather" color="blue" name="user" />
         <Text style={tw`text-xs text-blue-900`}>Profile</Text>
-      </View>
+      </TouchableOpacity>
     </View>
   )
 }
