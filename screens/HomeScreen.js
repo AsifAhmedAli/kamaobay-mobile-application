@@ -9,14 +9,13 @@ import NavBar from "../components/home/NavBar"
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView style={tw`flex bg-gray-200 h-full`}>
-      <Header style={tw`flex-start`} />
+    <SafeAreaView style={tw`bg-gray-200 h-full`}>
+      <Header style={tw``} />
       <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
         <Intro />
         <Earning />
       </ScrollView>
-      <View onPress={()=>console.log("uhkojj")}><Text>hello</Text></View>
-      <NavBar style={tw`flex-end `}/>
+      <NavBar style={tw``}/>
     </SafeAreaView>
   )
 }
