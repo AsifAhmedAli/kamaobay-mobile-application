@@ -10,11 +10,14 @@ const NavBar = () => {
     <View
       style={tw`bg-white flex flex-row rounded-t-xl h-12 py-1 items-center justify-evenly shadow-xl`}
     >
-      <View style={tw`flex items-center`}>
+      <TouchableOpacity
+        style={tw`flex items-center`}
+        onPress={() => navigation.navigate("HomeScreen")}
+      >
         <Icon style={tw`p-1 w-10`} type="feather" color="blue" name="home" />
         <Text style={tw`text-xs text-blue-900`}>Home</Text>
-      </View>
-      <View style={tw`flex items-center`}>
+      </TouchableOpacity>
+      <TouchableOpacity style={tw`flex items-center`}>
         <Icon
           style={tw`p-1 w-10`}
           type="material-community"
@@ -22,8 +25,8 @@ const NavBar = () => {
           name="view-dashboard-outline"
         />
         <Text style={tw`text-xs text-blue-900`}>Dashboard</Text>
-      </View>
-      <View style={tw`flex items-center`}>
+      </TouchableOpacity>
+      <TouchableOpacity style={tw`flex items-center`}>
         <Icon
           style={tw`p-1 w-10`}
           type="feather"
@@ -31,7 +34,7 @@ const NavBar = () => {
           name="settings"
         />
         <Text style={tw`text-xs text-blue-900`}>Settings</Text>
-      </View>
+      </TouchableOpacity>
       <TouchableOpacity
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("SignInScreen")}

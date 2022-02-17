@@ -15,7 +15,7 @@ const HomeScreen = () => {
         <Intro />
         <Earning />
       </ScrollView>
-      <NavBar style={tw``}/>
+      <NavBar/>
     </SafeAreaView>
   )
 }
