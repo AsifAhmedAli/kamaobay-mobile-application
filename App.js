@@ -10,9 +10,10 @@ import { SafeAreaProvider } from "react-native-safe-area-context"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import HomeScreen from "./screens/HomeScreen"
 import tw from "twrnc"
-import SignInScreen from "./screens/SignInScreen"
-import ResetPasswordScreen from "./screens/ResetPasswordScreen"
-import SignUpScreen from "./screens/SignUpScreen"
+import SignInScreen from "./screens/auth/SignInScreen"
+import SignUpScreen from "./screens/auth/SignUpScreen"
+import ResetPasswordScreen from "./screens/auth/ResetPasswordScreen"
+import DashboardHomeScreen from "./screens/dashboard/DashboardHomeScreen"
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -45,6 +46,11 @@ export default function App() {
               component={ResetPasswordScreen}
               options={{ headerShown: false }}
             />
+            <Stack.Screen
+              name="DashboardHomeScreen"
+              component={DashboardHomeScreen}
+              options={{ headerShown: false }}
+            />
           </Stack.Navigator>
         </KeyboardAvoidingView>
       </SafeAreaProvider>
@@ -54,6 +60,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    color:"blue"
+    color: "blue",
   },
 })

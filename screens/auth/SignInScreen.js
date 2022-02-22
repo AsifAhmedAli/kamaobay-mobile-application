@@ -1,6 +1,5 @@
 import {
   Image,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -8,15 +7,15 @@ import {
   View,
 } from "react-native"
 import React from "react"
-import { useNavigation } from "@react-navigation/native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import tw from "twrnc"
 import { Formik } from "formik"
-import Button from "../components/Auth/Button"
+import Button from "../../components/Auth/Button"
 import { Icon } from "react-native-elements"
-import NavBar from "../components/home/NavBar"
+import NavBar from "../../components/home/NavBar"
+import { useNavigation } from "@react-navigation/native"
 
-const SignUpScreen = () => {
+const SignInScreen = () => {
   const navigation = useNavigation()
   return (
     <SafeAreaView style={tw`h-full`}>
@@ -24,7 +23,7 @@ const SignUpScreen = () => {
         style={tw`flex items-center justify-center bg-blue-900 h-42 rounded-bl-xl`}
       >
         <Image
-          source={require("../assets/auth/white.png")}
+          source={require("../../assets/auth/white.png")}
           style={[tw`h-full w-3/4`, { resizeMode: "contain" }]}
         />
       </View>
@@ -50,40 +49,13 @@ const SignUpScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
+      <View style={tw`px-8`}>
         <Formik
-          initialValues={{
-            username: "",
-            fullname: "",
-            email: "",
-            phone: "",
-            password: "",
-          }}
+          initialValues={{ email: "", password: "" }}
           onSubmit={(values) => console.log(values)}
         >
           {({ handleChange, handleBlur, handleSubmit, values }) => (
             <View>
-              <Text style={tw`text-blue-900 font-semibold px-4 py-2`}>
-                Username
-              </Text>
-              <TextInput
-                style={tw`bg-white rounded-full py-2 px-6 w-full mb-4`}
-                onChangeText={handleChange("username")}
-                onBlur={handleBlur("username")}
-                value={values.username}
-                placeholder="Username"
-              />
-              <Text style={tw`text-blue-900 font-semibold px-4 py-2`}>
-                Fullname
-              </Text>
-              <TextInput
-                style={tw`bg-white rounded-full py-2 px-6 w-full mb-4`}
-                onChangeText={handleChange("fullname")}
-                onBlur={handleBlur("fullname")}
-                value={values.fullname}
-                placeholder="Fullname"
-              />
-
               <Text style={tw`text-blue-900 font-semibold px-4 py-2`}>
                 Email
               </Text>
@@ -94,16 +66,6 @@ const SignUpScreen = () => {
                 value={values.email}
                 autoCompleteType="email"
                 placeholder="Your Email"
-              />
-              <Text style={tw`text-blue-900 font-semibold px-4 py-2`}>
-                Contact
-              </Text>
-              <TextInput
-                style={tw`bg-white rounded-full py-2 px-6 w-full mb-4`}
-                onChangeText={handleChange("phone")}
-                onBlur={handleBlur("phone")}
-                value={values.phone}
-                placeholder="Your Number"
               />
               <Text style={tw`text-blue-900 font-semibold px-4 py-2`}>
                 Password
@@ -126,20 +88,20 @@ const SignUpScreen = () => {
                   Forget Password?
                 </Text>
               </View>
-              <Button onPress={handleSubmit} title="Sign Up" />
+              <Button onPress={handleSubmit} title="Sign In" />
               <View style={tw`flex flex-row my-4 items-center justify-center`}>
-                <Text>Already have an account </Text>
+                <Text>New on our platform? </Text>
                 <Text
                   style={tw`text-blue-900 underline`}
-                  onPress={() => navigation.navigate("SignInScreen")}
+                  onPress={() => navigation.navigate("SignUpScreen")}
                 >
-                  Sign in to your account
+                  Create an account
                 </Text>
               </View>
             </View>
           )}
         </Formik>
-      </ScrollView>
+      </View>
       <View style={tw`flex flex-1 justify-end`}>
         <NavBar style={tw``} />
       </View>
@@ -147,6 +109,6 @@ const SignUpScreen = () => {
   )
 }
 
-export default SignUpScreen
+export default SignInScreen
 
 const styles = StyleSheet.create({})

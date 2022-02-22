@@ -12,9 +12,9 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import { Icon } from "react-native-elements"
 import { Formik } from "formik"
 import tw from "twrnc"
-import NavBar from "../components/home/NavBar"
-import Button from "../components/Auth/Button"
-import TextInput from "../components/Auth/TextInput"
+import NavBar from "../../components/home/NavBar"
+import Button from "../../components/Auth/Button"
+import TextInput from "../../components/Auth/TextInput"
 
 const ResetPasswordScreen = () => {
   const navigation = useNavigation()
@@ -24,7 +24,7 @@ const ResetPasswordScreen = () => {
         style={tw`flex items-center justify-center bg-blue-900 h-42 rounded-bl-xl`}
       >
         <Image
-          source={require("../assets/auth/white.png")}
+          source={require("../../assets/auth/white.png")}
           style={[tw`h-full w-3/4`, { resizeMode: "contain" }]}
         />
       </View>
@@ -94,7 +94,7 @@ const ResetPasswordScreen = () => {
         </Formik>
       </View>
       <View style={tw`flex flex-1 justify-end`}>
-        <NavBar style={tw``} />
+        <NavBar  />
       </View>
     </SafeAreaView>
   )

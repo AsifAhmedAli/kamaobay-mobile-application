@@ -5,7 +5,7 @@ import tw from "twrnc"
 
 const Button = ({title,onPress}) => {
   return (
-    <TouchableOpacity style={tw`w-full p-4 bg-blue-900 rounded-full`}>
+    <TouchableOpacity style={tw`w-full py-2 mb-4 bg-blue-900 rounded-full`}>
       <Text style={tw`text-center text-white text-xl`}>{title}</Text>
     </TouchableOpacity>
   )
