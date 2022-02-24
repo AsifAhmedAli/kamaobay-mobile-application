@@ -24,7 +24,7 @@ const NavBar = () => {
       </TouchableOpacity>
       <TouchableOpacity
         style={tw`flex items-center`}
-        onPress={() => navigation.navigate("")}
+        onPress={() => navigation.navigate("WalletScreen")}
       >
         <Icon style={tw`p-1 w-10`} type="entypo" color="blue" name="wallet" />
         <Text style={tw`text-xs text-blue-900`}>Wallet</Text>

@@ -14,6 +14,7 @@ import SignInScreen from "./screens/auth/SignInScreen"
 import SignUpScreen from "./screens/auth/SignUpScreen"
 import ResetPasswordScreen from "./screens/auth/ResetPasswordScreen"
 import DashboardHomeScreen from "./screens/dashboard/DashboardHomeScreen"
+import WalletScreen from "./screens/wallet/WalletScreen"
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -49,6 +50,11 @@ export default function App() {
             <Stack.Screen
               name="DashboardHomeScreen"
               component={DashboardHomeScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="WalletScreen"
+              component={WalletScreen}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
