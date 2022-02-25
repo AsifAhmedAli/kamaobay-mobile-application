@@ -15,6 +15,7 @@ import SignUpScreen from "./screens/auth/SignUpScreen"
 import ResetPasswordScreen from "./screens/auth/ResetPasswordScreen"
 import DashboardHomeScreen from "./screens/dashboard/DashboardHomeScreen"
 import WalletScreen from "./screens/wallet/WalletScreen"
+import BuyStarsScreen from "./screens/buyStars/BuyStarsScreen"
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -55,6 +56,11 @@ export default function App() {
             <Stack.Screen
               name="WalletScreen"
               component={WalletScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="BuyStarsScreen"
+              component={BuyStarsScreen}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

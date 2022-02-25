@@ -31,7 +31,7 @@ const NavBar = () => {
       </TouchableOpacity>
       <TouchableOpacity
         style={tw`flex items-center`}
-        onPress={() => navigation.navigate("")}
+        onPress={() => navigation.navigate("BuyStarsScreen")}
       >
         <Icon
           style={tw`p-1 w-10`}
