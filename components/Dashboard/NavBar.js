@@ -47,7 +47,7 @@ const NavBar = () => {
       </TouchableOpacity>
       <TouchableOpacity
         style={tw`flex items-center`}
-        onPress={() => navigation.navigate("")}
+        onPress={() => navigation.navigate("FriendScreen")}
       >
         <Icon style={tw`p-1 w-10`} type="feather" color="blue" name="user" />
         <Text style={tw`text-xs text-blue-900`}>Friend</Text>
