@@ -1,6 +1,7 @@
 import { FlatList, Image, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
+import { useNavigation } from "@react-navigation/native"
 
 const FriendsList = () => {
   const data = [
@@ -69,11 +70,15 @@ const FriendsList = () => {
                 />
               </View>
             </View>
-            <View style={tw`flex items-center p-2 bg-blue-100 p-4 rounded-lg h-full`}>
+            <View
+              style={tw`flex items-center p-2 bg-blue-100 p-4 rounded-lg h-full`}
+            >
               <Image style={tw`w-10 h-10 bg-blue-900 rounded-full mb-2`} />
               <Text style={tw`text-blue-900 font-semibold`}>Message</Text>
             </View>
-            <View style={tw`flex items-center p-2 bg-blue-100 p-4 rounded-lg h-full`}>
+            <View
+              style={tw`flex items-center p-2 bg-blue-100 p-4 rounded-lg h-full`}
+            >
               <Image style={tw`w-10 h-10 bg-blue-900 rounded-full mb-2`} />
               <Text style={tw`text-blue-900 font-semibold`}>Challenge</Text>
             </View>

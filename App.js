@@ -17,6 +17,8 @@ import DashboardHomeScreen from "./screens/dashboard/DashboardHomeScreen"
 import WalletScreen from "./screens/wallet/WalletScreen"
 import BuyStarsScreen from "./screens/buyStars/BuyStarsScreen"
 import FriendScreen from "./screens/friend/FriendScreen"
+import GamesScreen from "./screens/games/GamesScreen"
+import TasksScreen from "./screens/tasks/TasksScreen"
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -67,6 +69,16 @@ export default function App() {
             <Stack.Screen
               name="FriendScreen"
               component={FriendScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="GamesScreen"
+              component={GamesScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="TasksScreen"
+              component={TasksScreen}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

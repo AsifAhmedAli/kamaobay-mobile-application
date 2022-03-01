@@ -2,6 +2,7 @@ import { FlatList, Image, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
 import { Icon } from "react-native-elements"
+import { useNavigation } from "@react-navigation/native"
 
 const FreeEarning = () => {
   const data = [
@@ -36,6 +37,8 @@ const FreeEarning = () => {
       image: require("../../assets/home_page/ad.png"),
     },
   ]
+
+  const navigation = useNavigation()
   return (
     <View>
       <Text style={tw`text-blue-900 font-bold text-lg my-4`}>Free</Text>
@@ -51,13 +54,14 @@ const FreeEarning = () => {
               style={[tw`h-10 w-14`, { resizeMode: "contain" }]}
             />
             <View style={tw`flex-row flex-1 justify-between`}>
-
-            <Text style={tw`text-blue-900 font-semibold`}>{text}</Text>
-            <Icon type="entypo" name="dots-three-vertical" style={tw``} />
+              <Text style={tw`text-blue-900 font-semibold`}>{text}</Text>
+              <Icon type="entypo" name="dots-three-vertical" style={tw``} />
             </View>
           </View>
         )}
       />
+      <Text style={tw`bg-rose-100 p-4 m-2 text-blue-900`} onPress={() => navigation.navigate("GamesScreen")}>Games</Text>
+      <Text style={tw`bg-rose-100 p-4 m-2 text-blue-900`} onPress={() => navigation.navigate("TasksScreen")}>Tasks</Text>
     </View>
   )
 }
