@@ -1,6 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
+import { Col, Row, Grid } from "react-native-easy-grid"
 
 const TasksList = () => {
   const data = [
@@ -12,7 +13,7 @@ const TasksList = () => {
     {
       id: 2,
       task: "Watching Youtube video",
-      points: 100,
+      points: 1000,
     },
     {
       id: 3,
@@ -35,10 +36,17 @@ const TasksList = () => {
       points: 100,
     },
   ]
+  tableHead = ["Task", "Points", "Delete"]
   return (
     <View>
       <Text style={tw`text-blue-900 text-xl font-bold my-4`}>Tasks</Text>
-      
+      <Grid>
+        <Row>
+          <Col>hi</Col>
+          <Col>hi</Col>
+          <Col>hi</Col>
+        </Row>
+      </Grid>
     </View>
   )
 }
