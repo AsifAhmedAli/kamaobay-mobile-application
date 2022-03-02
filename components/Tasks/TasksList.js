@@ -41,11 +41,24 @@ const TasksList = () => {
     <View>
       <Text style={tw`text-blue-900 text-xl font-bold my-4`}>Tasks</Text>
       <Grid>
-        <Row>
-          <Col>hi</Col>
-          <Col>hi</Col>
-          <Col>hi</Col>
-        </Row>
+        <FlatList
+          style={tw``}
+          data={data}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item: { id, task, points } }) => (
+            <Row>
+              <Col>
+                <Text>{task}</Text>
+              </Col>
+              <Col>
+                <Text>{points}</Text>
+              </Col>
+              <Col>
+                <Text>hui</Text>
+              </Col>
+            </Row>
+          )}
+        />
       </Grid>
     </View>
   )
