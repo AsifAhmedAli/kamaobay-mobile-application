@@ -19,6 +19,7 @@ import BuyStarsScreen from "./screens/buyStars/BuyStarsScreen"
 import FriendScreen from "./screens/friend/FriendScreen"
 import GamesScreen from "./screens/games/GamesScreen"
 import TasksScreen from "./screens/tasks/TasksScreen"
+import AddFriendScreen from "./screens/friend/AddFriendScreen"
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -69,6 +70,11 @@ export default function App() {
             <Stack.Screen
               name="FriendScreen"
               component={FriendScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddFriendScreen"
+              component={AddFriendScreen}
               options={{ headerShown: false }}
             />
             <Stack.Screen
