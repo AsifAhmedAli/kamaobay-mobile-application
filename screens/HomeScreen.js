@@ -6,6 +6,7 @@ import tw from "twrnc"
 import Intro from "../components/home/Intro"
 import Earning from "../components/home/Earning"
 import NavBar from "../components/home/NavBar"
+import Pricing from "../components/home/Pricing"
 
 const HomeScreen = () => {
   return (
@@ -14,8 +15,9 @@ const HomeScreen = () => {
       <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
         <Intro />
         <Earning />
+        <Pricing />
       </ScrollView>
-      <NavBar/>
+      <NavBar />
     </SafeAreaView>
   )
 }
