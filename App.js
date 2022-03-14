@@ -20,6 +20,10 @@ import FriendScreen from "./screens/friend/FriendScreen"
 import GamesScreen from "./screens/games/GamesScreen"
 import TasksScreen from "./screens/tasks/TasksScreen"
 import AddFriendScreen from "./screens/friend/AddFriendScreen"
+import ModalScreen1 from "./screens/modal/ModalScreen1"
+import ModalScreen2 from "./screens/modal/ModalScreen2"
+import ModalScreen3 from "./screens/modal/ModalScreen3"
+import ModalScreen4 from "./screens/modal/ModalScreen4"
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -85,6 +89,26 @@ export default function App() {
             <Stack.Screen
               name="TasksScreen"
               component={TasksScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ModalScreen1"
+              component={ModalScreen1}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ModalScreen2"
+              component={ModalScreen2}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ModalScreen3"
+              component={ModalScreen3}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ModalScreen4"
+              component={ModalScreen4}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
