@@ -54,7 +54,7 @@ const FriendsList = () => {
           >
             <View style={tw`bg-blue-100 p-4 rounded-lg`}>
               <View
-                style={tw`absolute z-50 right-4 top-4 h-6 w-6 rounded-full ${
+                style={tw`absolute z-50 right-4 top-4 border-2 border-white h-6 w-6 rounded-full ${
                   status == "online" ? "bg-blue-900" : "bg-green-400"
                 }`}
               ></View>

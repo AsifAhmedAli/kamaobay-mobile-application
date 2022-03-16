@@ -24,6 +24,7 @@ import ModalScreen1 from "./screens/modal/ModalScreen1"
 import ModalScreen2 from "./screens/modal/ModalScreen2"
 import ModalScreen3 from "./screens/modal/ModalScreen3"
 import ModalScreen4 from "./screens/modal/ModalScreen4"
+import ChatScreen from "./screens/chat/ChatScreen"
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -109,6 +110,11 @@ export default function App() {
             <Stack.Screen
               name="ModalScreen4"
               component={ModalScreen4}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ChatScreen"
+              component={ChatScreen}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
