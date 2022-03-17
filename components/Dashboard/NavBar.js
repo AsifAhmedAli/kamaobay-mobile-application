@@ -43,7 +43,7 @@ const NavBar = () => {
       </TouchableOpacity>
       <TouchableOpacity
         style={tw`flex items-center`}
-        onPress={() => navigation.navigate("ChatScreen")}
+        onPress={() => navigation.navigate("ChatListScreen")}
       >
         <Icon style={tw`p-1 w-10`} type="entypo" color="blue" name="chat" />
         <Text style={tw`text-xs text-blue-900`}>Chat</Text>

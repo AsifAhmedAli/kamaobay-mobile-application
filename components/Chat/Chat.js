@@ -4,10 +4,12 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native"
 import React from "react"
 import tw from "twrnc"
+import { useNavigation } from "@react-navigation/native"
 
 const Chat = () => {
   const data = [
@@ -52,17 +54,18 @@ const Chat = () => {
       time: "12:22 am",
     },
   ]
+  const navigation= useNavigation()
   const text = "lorem ipsum has asd..."
   return (
-    <View style={tw`bg-white rounded-xl pt-4`}>
+    <View style={tw`bg-white rounded-t-xl py-4`}>
       <ScrollView style={tw`px-6`} showsVerticalScrollIndicator={false}>
         <FlatList
           style={tw``}
           data={data}
           keyExtractor={(item) => item.id}
           renderItem={({ item: { id, name, time } }) => (
-            <View
-              style={tw`flex-row items-center justify-between border-b border-gray-100 rounded-lg my-2 p-2`}
+            <TouchableOpacity
+              style={tw`flex-row items-center justify-between border-b border-gray-100 rounded-lg my-3 p-2 py-4`} onPress={()=>navigation.navigate('ChatScreen')}
             >
               <View style={tw`flex-row`}>
                 <Image
@@ -76,8 +79,8 @@ const Chat = () => {
                   <Text style={tw`text-blue-900 font-semibold`}>{text}</Text>
                 </View>
               </View>
-              <Text>{time}</Text>
-            </View>
+              <Text style={tw`text-blue-900 font-bold`}>{time}</Text>
+            </TouchableOpacity>
           )}
         />
       </ScrollView>

@@ -47,7 +47,7 @@ const ChatShortcut = () => {
       >
         <Image
           // source={image}
-          style={tw`bg-blue-900 rounded-full w-12 h-12`}
+          style={tw`bg-blue-900 rounded-full w-10 h-10`}
           // style={[tw`h-14 w-16 rounded-full`, { resizeMode: "contain" }]}
         />
       </View>
@@ -73,7 +73,7 @@ const ChatShortcut = () => {
             >
               <Image
                 // source={image}
-                style={tw`bg-gray-200 rounded-full w-10 h-10`}
+                style={tw`bg-gray-200 rounded-full w-8 h-8`}
                 // style={[tw`h-14 w-16 rounded-full`, { resizeMode: "contain" }]}
               />
             </View>

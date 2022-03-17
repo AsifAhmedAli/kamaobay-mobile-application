@@ -24,6 +24,7 @@ import ModalScreen1 from "./screens/modal/ModalScreen1"
 import ModalScreen2 from "./screens/modal/ModalScreen2"
 import ModalScreen3 from "./screens/modal/ModalScreen3"
 import ModalScreen4 from "./screens/modal/ModalScreen4"
+import ChatListScreen from "./screens/chat/ChatListScreen"
 import ChatScreen from "./screens/chat/ChatScreen"
 
 export default function App() {
@@ -110,6 +111,11 @@ export default function App() {
             <Stack.Screen
               name="ModalScreen4"
               component={ModalScreen4}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ChatListScreen"
+              component={ChatListScreen}
               options={{ headerShown: false }}
             />
             <Stack.Screen
