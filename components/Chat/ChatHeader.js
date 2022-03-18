@@ -5,7 +5,7 @@ import tw from "twrnc"
 const ChatHeader = () => {
   return (
     <View
-      style={tw`bg-white rounded-t-xl p-6 flex-row items-center justify-between`}
+      style={tw`bg-white rounded-t-xl p-6 flex-row items-start justify-between`}
     >
       <View>
         <Image style={tw`h-8 w-8 bg-blue-900 rounded-full`} />
