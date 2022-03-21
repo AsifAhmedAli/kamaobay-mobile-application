@@ -8,7 +8,7 @@ const NavBar = () => {
   const navigation = useNavigation()
   return (
     <View
-      style={tw`bg-white flex flex-row rounded-t-xl h-12 py-1 items-center justify-evenly shadow-xl`}
+      style={tw`bg-white  flex flex-row rounded-t-xl h-12 py-1 items-center justify-evenly shadow-xl`}
     >
       <TouchableOpacity
         style={tw`flex items-center`}
