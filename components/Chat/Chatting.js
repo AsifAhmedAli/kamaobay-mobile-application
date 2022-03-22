@@ -1,8 +1,6 @@
 import {
   FlatList,
   Image,
-  KeyboardAvoidingView,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -10,7 +8,6 @@ import {
 } from "react-native"
 import React, { useRef, useState } from "react"
 import tw from "twrnc"
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 
 const Chatting = () => {
   const [textInputValue, setTextInputValue] = useState("")
