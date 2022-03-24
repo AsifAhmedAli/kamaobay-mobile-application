@@ -23,7 +23,7 @@ const SignInScreen = () => {
         style={tw`flex items-center justify-center bg-blue-900 h-42 rounded-bl-xl`}
       >
         <Image
-          source={require("../../assets/auth/white.png")}
+          // source={require("../../assets/auth/white.png")}
           style={[tw`h-full w-3/4`, { resizeMode: "contain" }]}
         />
       </View>

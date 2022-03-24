@@ -9,32 +9,32 @@ const FreeEarning = () => {
     {
       id: 1,
       text: "Youtube video",
-      image: require("../../assets/home_page/video.png"),
+      image: require("../../assets/dashboard/youtube.png"),
     },
     {
       id: 2,
       text: "Ads",
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/dashboard/ad.png"),
     },
     {
       id: 3,
       text: "Youtube video",
-      image: require("../../assets/home_page/video.png"),
+      image: require("../../assets/dashboard/youtube.png"),
     },
     {
       id: 4,
       text: "Ads",
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/dashboard/ad.png"),
     },
     {
       id: 5,
       text: "Youtube video",
-      image: require("../../assets/home_page/video.png"),
+      image: require("../../assets/dashboard/youtube.png"),
     },
     {
       id: 6,
       text: "Ads",
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/dashboard/ad.png"),
     },
   ]
 
@@ -53,8 +53,11 @@ const FreeEarning = () => {
               style={[tw`h-10 w-14`, { resizeMode: "contain" }]}
             />
             <View style={tw`flex-row flex-1 justify-between`}>
-              <Text style={tw`text-blue-900 font-semibold`}>{text}</Text>
-              <Icon type="entypo" name="dots-three-vertical" style={tw``} />
+              <Text style={tw`text-blue-900 text-lg font-bold`}>{text}</Text>
+              <Image
+                source={require("../../assets/dashboard/option.png")}
+                style={[tw`h-8 w-10`, { resizeMode: "contain" }]}
+              />
             </View>
           </View>
         )}

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import React from "react"
 import { useNavigation } from "@react-navigation/native"
 import tw from "twrnc"
@@ -14,11 +14,9 @@ const NavBar = () => {
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("DashboardHomeScreen")}
       >
-        <Icon
-          style={tw`p-1 w-10`}
-          type="material-community"
-          color="blue"
-          name="view-dashboard-outline"
+        <Image
+          source={require("../../assets/dashboard/dashboard.png")}
+          style={[tw`h-6 w-10`, { resizeMode: "contain" }]}
         />
         <Text style={tw`text-xs text-blue-900`}>Dashboard</Text>
       </TouchableOpacity>
@@ -26,18 +24,19 @@ const NavBar = () => {
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("WalletScreen")}
       >
-        <Icon style={tw`p-1 w-10`} type="entypo" color="blue" name="wallet" />
+        <Image
+          source={require("../../assets/dashboard/wallet.png")}
+          style={[tw`h-6 w-10`, { resizeMode: "contain" }]}
+        />
         <Text style={tw`text-xs text-blue-900`}>Wallet</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("BuyStarsScreen")}
       >
-        <Icon
-          style={tw`p-1 w-10`}
-          type="antdesign"
-          color="blue"
-          name="shoppingcart"
+        <Image
+          source={require("../../assets/dashboard/stars.png")}
+          style={[tw`h-6 w-10`, { resizeMode: "contain" }]}
         />
         <Text style={tw`text-xs text-blue-900`}>Stars</Text>
       </TouchableOpacity>
@@ -45,14 +44,20 @@ const NavBar = () => {
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("ChatListScreen")}
       >
-        <Icon style={tw`p-1 w-10`} type="entypo" color="blue" name="chat" />
+        <Image
+          source={require("../../assets/dashboard/chat.png")}
+          style={[tw`h-6 w-10`, { resizeMode: "contain" }]}
+        />
         <Text style={tw`text-xs text-blue-900`}>Chat</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("FriendScreen")}
       >
-        <Icon style={tw`p-1 w-10`} type="feather" color="blue" name="user" />
+        <Image
+          source={require("../../assets/dashboard/friend.png")}
+          style={[tw`h-6 w-10`, { resizeMode: "contain" }]}
+        />
         <Text style={tw`text-xs text-blue-900`}>Friend</Text>
       </TouchableOpacity>
     </View>

@@ -12,31 +12,31 @@ const GamesList = () => {
     },
     {
       id: 2,
-      game: "Watch Dogs",
+      game: "Cycling",
       player: "Mark Jones",
       playerID: 2415669,
     },
     {
       id: 3,
-      game: "Watch Dogs",
+      game: "Tennis",
       player: "Mark Jones",
       playerID: 2415669,
     },
     {
       id: 4,
-      game: "Watch Dogs",
+      game: "Boxing",
       player: "Mark Jones",
       playerID: 2415669,
     },
     {
       id: 5,
-      game: "Watch Dogs",
+      game: "Karake",
       player: "Mark Jones",
       playerID: 2415669,
     },
     {
       id: 6,
-      game: "Watch Dogs",
+      game: "Street Fighter",
       player: "Mark Jones",
       playerID: 2415669,
     },
@@ -55,16 +55,25 @@ const GamesList = () => {
             <View>
               <Text style={tw`text-blue-900 text-lg`}>{game}</Text>
               <View style={tw`flex-row items-center`}>
-                <Image style={tw`w-4 h-4 rounded-full bg-blue-900 mr-2`} />
+                <Image
+                  source={require("../../assets/dashboard/friendList/user.png")}
+                  style={[tw`h-4 w-4 mr-4`, { resizeMode: "contain" }]}
+                />
                 <Text style={tw`text-blue-900`}>{player}</Text>
               </View>
               <View style={tw`flex-row items-center`}>
-                <Image style={tw`w-4 h-4 rounded-full bg-blue-900 mr-2`} />
+                <Image
+                  source={require("../../assets/dashboard/friendList/id.png")}
+                  style={[tw`h-4 w-4 mr-4`, { resizeMode: "contain" }]}
+                />
                 <Text style={tw`text-blue-900`}>{playerID}</Text>
               </View>
             </View>
             <View>
-              <Image style={tw`w-12 h-12 bg-blue-900 rounded-full`} />
+              <Image
+                source={require("../../assets/dashboard/friendList/games.png")}
+                style={[tw`h-14 w-14`, { resizeMode: "contain" }]}
+              />
             </View>
           </View>
         )}

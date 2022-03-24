@@ -19,7 +19,7 @@ const HomeScreen = () => {
   const navigation = useNavigation()
   return (
     <SafeAreaView style={tw`bg-gray-200 h-full`}>
-      <Header style={tw``} />
+      <Header />
       <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
         <Intro />
         <Earning />

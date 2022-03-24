@@ -14,27 +14,26 @@ const NavBar = () => {
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("HomeScreen")}
       >
-        <Icon style={tw`p-1 w-10`} type="feather" color="blue" name="home" />
+        <Image
+          source={require("../../assets/auth/home.png")}
+          style={[tw`h-6 w-10`, { resizeMode: "contain" }]}
+        />
         <Text style={tw`text-xs text-blue-900`}>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("DashboardHomeScreen")}
       >
-        <Icon
-          style={tw`p-1 w-10`}
-          type="material-community"
-          color="blue"
-          name="view-dashboard-outline"
+        <Image
+          source={require("../../assets/auth/dashboard.png")}
+          style={[tw`h-6 w-10`, { resizeMode: "contain" }]}
         />
         <Text style={tw`text-xs text-blue-900`}>Dashboard</Text>
       </TouchableOpacity>
       <TouchableOpacity style={tw`flex items-center`}>
-        <Icon
-          style={tw`p-1 w-10`}
-          type="feather"
-          color="blue"
-          name="settings"
+        <Image
+          source={require("../../assets/auth/setting.png")}
+          style={[tw`h-6 w-10`, { resizeMode: "contain" }]}
         />
         <Text style={tw`text-xs text-blue-900`}>Settings</Text>
       </TouchableOpacity>
@@ -42,7 +41,10 @@ const NavBar = () => {
         style={tw`flex items-center`}
         onPress={() => navigation.navigate("SignInScreen")}
       >
-        <Icon style={tw`p-1 w-10`} type="feather" color="blue" name="user" />
+        <Image
+          source={require("../../assets/auth/profile.png")}
+          style={[tw`h-6 w-10`, { resizeMode: "contain" }]}
+        />
         <Text style={tw`text-xs text-blue-900`}>Profile</Text>
       </TouchableOpacity>
     </View>

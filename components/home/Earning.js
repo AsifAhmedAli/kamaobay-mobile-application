@@ -7,37 +7,37 @@ const Earning = () => {
     {
       id: 1,
       text: "Watch Youtube video",
-      image: require("../../assets/home_page/video.png"),
+      image: require("../../assets/home/youtube.png"),
     },
     {
       id: 2,
       text: "Watch Ads",
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/home/ad.png"),
     },
     {
       id: 3,
       text: "Survey / Data Entry",
-      image: require("../../assets/home_page/survey.png"),
+      image: require("../../assets/home/survey.png"),
     },
     {
       id: 4,
       text: "Completed Task",
-      image: require("../../assets/home_page/task.png"),
+      image: require("../../assets/home/task.png"),
     },
     {
       id: 5,
       text: "Share Post / Subscribe",
-      image: require("../../assets/home_page/share.png"),
+      image: require("../../assets/home/share.png"),
     },
     {
       id: 6,
       text: "Play Games",
-      image: require("../../assets/home_page/play_game.png"),
+      image: require("../../assets/home/play.png"),
     },
   ]
   return (
     <View>
-      <Text style={tw`text-blue-900 font-bold my-4`}>How to earn</Text>
+      <Text style={tw`text-blue-900 text-xl font-bold my-4`}>How to earn</Text>
       <FlatList
         style={tw``}
         data={data}

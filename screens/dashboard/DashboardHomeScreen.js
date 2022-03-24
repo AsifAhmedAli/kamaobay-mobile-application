@@ -10,7 +10,7 @@ import PremiumTasks from "../../components/Dashboard/PremiumTasks"
 import { useNavigation } from "@react-navigation/native"
 
 const DashboardHomeScreen = () => {
-    const navigation = useNavigation()
+  const navigation = useNavigation()
   return (
     <SafeAreaView style={tw`h-full`}>
       <Header />

@@ -12,17 +12,17 @@ const TasksList = () => {
     },
     {
       id: 2,
-      task: "Watching Youtube video",
+      task: "Watching Ads",
       points: 1000,
     },
     {
       id: 3,
-      task: "Watching Youtube video",
+      task: "Play Games",
       points: 100,
     },
     {
       id: 4,
-      task: "Watching Youtube video",
+      task: "Watching Ads",
       points: 100,
     },
     {
@@ -32,7 +32,7 @@ const TasksList = () => {
     },
     {
       id: 6,
-      task: "Watching Youtube video",
+      task: "Play Games",
       points: 100,
     },
   ]
@@ -56,17 +56,22 @@ const TasksList = () => {
           data={data}
           keyExtractor={(item) => item.id}
           renderItem={({ item: { id, task, points } }) => (
-            <Row
-              style={tw`flex py-2 items-center justify-between`}
-            >
-              <Col style={tw`flex-1`}>
-                <Text style={tw`text-blue-900 text-lg font-bold`}>{task}</Text>
+            <Row style={tw`flex py-2 items-start justify-between`}>
+              <Col style={tw`flex-row flex-1 items-start`}>
+                <Image
+                  source={require("../../assets/dashboard/tasks/task.png")}
+                  style={[tw`h-4 w-4 mr-2`, { resizeMode: "contain" }]}
+                />
+                <Text style={tw`text-blue-900 text-md w-3/4 font-bold`}>{task}</Text>
               </Col>
               <Col style={tw`w-24`}>
                 <Text style={tw`text-blue-900 text-md`}>{points} points</Text>
               </Col>
               <Col style={tw`w-14 flex items-center`}>
-                <Image style={tw`w-4 h-4 bg-blue-900 rounded-full`} />
+                <Image
+                  source={require("../../assets/dashboard/tasks/delete.png")}
+                  style={[tw`h-6 w-6`, { resizeMode: "contain" }]}
+                />
               </Col>
             </Row>
           )}
