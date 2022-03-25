@@ -4,7 +4,7 @@ import tw from "twrnc"
 
 const Intro = () => {
   return (
-    <View style={tw`flex-row items-center justify-between my-4`}>
+    <View style={tw`flex-row items-center justify-between my-8`}>
       <View
         style={tw`flex justify-between bg-white rounded-lg w-32 h-36 shadow-md px-4 py-6`}
       >

@@ -17,72 +17,62 @@ const ModalScreen2 = () => {
     {
       id: 1,
       name: "John",
+      image: require("../../assets/dashboard/friendList/u1.png"),
     },
     {
       id: 2,
       name: "Elza",
+      image: require("../../assets/dashboard/friendList/u2.png"),
     },
     {
       id: 3,
       name: "Mark",
+      image: require("../../assets/dashboard/friendList/u3.png"),
     },
     {
       id: 4,
       name: "Stefen",
+      image: require("../../assets/dashboard/friendList/u4.png"),
     },
     {
       id: 5,
       name: "Sid",
+      image: require("../../assets/dashboard/friendList/u5.png"),
     },
     {
       id: 6,
       name: "Harry",
+      image: require("../../assets/dashboard/friendList/u1.png"),
     },
     {
       id: 7,
       name: "Emmi",
+      image: require("../../assets/dashboard/friendList/u2.png"),
     },
     {
       id: 8,
       name: "Anna",
-    },{
+      image: require("../../assets/dashboard/friendList/u3.png"),
+    },
+    {
       id: 9,
       name: "John",
+      image: require("../../assets/dashboard/friendList/u4.png"),
     },
     {
       id: 10,
       name: "Elza",
+      image: require("../../assets/dashboard/friendList/u5.png"),
     },
     {
       id: 11,
       name: "Mark",
-    },{
+      image: require("../../assets/dashboard/friendList/u1.png"),
+    },
+    {
       id: 12,
       name: "Elza",
-    },
-    {
-      id: 13,
-      name: "Mark",
-    },
-    {
-      id: 14,
-      name: "Stefen",
-    },
-    {
-      id: 15,
-      name: "Sid",
-    },
-    {
-      id: 16,
-      name: "Harry",
-    },
-    {
-      id: 17,
-      name: "Emmi",
-    },
-    {
-      id: 18,
-      name: "Anna",
+      image: require("../../assets/dashboard/friendList/u2.png"),
     },
   ]
   const [show, setShow] = useState(false)
@@ -96,12 +86,15 @@ const ModalScreen2 = () => {
           setShow(!show)
         }}
       >
-        <View style={tw`m-auto p-5 px-1 bg-blue-900 h-11/12 w-3/4 rounded-lg`}>
+        <View style={tw`m-auto p-5 px-1 bg-blue-900 h-5/6 w-11/12 rounded-lg`}>
           <TouchableOpacity
-            style={tw`w-6 h-6 bg-white rounded-full p-1 right-4 top-4 absolute`}
+            style={tw`right-4 top-4 absolute`}
             onPress={() => setShow(false)}
           >
-            <Text style={tw`text-center`}>X</Text>
+            <Image
+              source={require("../../assets/dashboard/modals/cross.png")}
+              style={[tw`h-7 w-7`, { resizeMode: "contain" }]}
+            />
           </TouchableOpacity>
           <Text style={tw`text-white text-xl text-center my-4`}>
             Your Friends
@@ -111,10 +104,13 @@ const ModalScreen2 = () => {
               style={tw``}
               data={data}
               keyExtractor={(item) => item.id}
-              renderItem={({ item: { name } }) => (
+              renderItem={({ item: { name, image } }) => (
                 <View style={tw`my-2 flex-row items-center`}>
                   <View style={tw`flex-row items-center flex-1`}>
-                    <Image style={tw`h-10 w-10 rounded-full bg-white mr-4`} />
+                    <Image
+                      source={image}
+                      style={[tw`h-12 w-12 mr-4`, { resizeMode: "contain" }]}
+                    />
                     <Text style={tw`text-white font-bold`}>{name}</Text>
                   </View>
                   <TouchableOpacity
@@ -129,32 +125,39 @@ const ModalScreen2 = () => {
             />
             <View style={tw``}>
               <Text style={tw`text-white text-center mt-6 mb-4`}>
-                Send GIF To Your Friends
+                Send GIFT To Your Friends
               </Text>
               <View style={tw`flex-row justify-evenly items-center`}>
-                <View style={tw`p-2 border border-white rounded-md w-14`}>
+                <TouchableOpacity
+                  style={tw`p-2 border border-white rounded-md w-14`}
+                >
                   <Text style={tw`text-white text-center`}>100 Stars</Text>
-                </View>
-                <View style={tw`p-2 border border-white rounded-md w-14`}>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={tw`p-2 border border-white rounded-md w-14`}
+                >
                   <Text style={tw`text-white text-center`}>200 Stars</Text>
-                </View>
-                <View style={tw`p-2 border border-white rounded-md w-14`}>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={tw`p-2 border border-white rounded-md w-14`}
+                >
                   <Text style={tw`text-white text-center`}>500 Stars</Text>
-                </View>
+                </TouchableOpacity>
               </View>
               <View style={tw`flex-row justify-evenly items-center my-2`}>
-                <View style={tw`p-2 border border-white rounded-md w-14`}>
-                  <Text style={tw`text-white text-center`}>1000 Stars</Text>
-                </View>
-                <View
-                  style={tw`p-2 border border-white rounded-md w-14 h-full`}
+                <TouchableOpacity
+                  style={tw`p-2 border border-white rounded-md w-14`}
                 >
-                  <Text
-                    style={tw`text-white text-center border border-white p-2 rounded-full`}
-                  >
-                    +
-                  </Text>
-                </View>
+                  <Text style={tw`text-white text-center`}>1000 Stars</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={tw`p-2 border border-white rounded-md w-14 h-14`}
+                >
+                  <Image
+                    source={require("../../assets/dashboard/modals/add.png")}
+                    style={[tw`h-8 w-8 m-auto`, { resizeMode: "contain" }]}
+                  />
+                </TouchableOpacity>
               </View>
             </View>
           </ScrollView>

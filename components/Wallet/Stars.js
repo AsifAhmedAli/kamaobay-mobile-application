@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
 import { Icon } from "react-native-elements"
@@ -8,9 +8,15 @@ const Stars = () => {
     <View style={tw`bg-white p-6 rounded-xl shadow-lg `}>
       <Text style={tw`text-blue-900 font-bold text-xl`}>Your Main Stars</Text>
       <View style={tw`flex-row justify-between items-center px-8 my-4`}>
-        <Icon type="antdesign" name="pluscircleo" color="blue" />
+        <Image
+          source={require("../../assets/dashboard/wallet/add.png")}
+          style={[tw`h-10 w-14`, { resizeMode: "contain" }]}
+        />
         <Text style={tw`text-2xl font-semibold text-blue-900`}>10,000</Text>
-        <Icon type="antdesign" name="minuscircleo" color="blue" />
+        <Image
+          source={require("../../assets/dashboard/wallet/sub.png")}
+          style={[tw`h-10 w-14`, { resizeMode: "contain" }]}
+        />
       </View>
       <View style={tw`flex-row justify-evenly items-center`}>
         <TouchableOpacity

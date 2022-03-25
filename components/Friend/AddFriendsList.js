@@ -1,4 +1,11 @@
-import { FlatList, Image, StyleSheet, Text, View } from "react-native"
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native"
 import React from "react"
 import { Col, Grid, Row } from "react-native-easy-grid"
 import tw from "twrnc"
@@ -45,7 +52,7 @@ const AddFriendsList = () => {
           <Col style={tw`flex-1`}>
             <Text style={tw`text-blue-900 text-lg font-bold`}>Name</Text>
           </Col>
-          <Col style={tw`w-20 mx-1`}>
+          <Col style={tw`w-20 mx-1 mr-4`}>
             <Text style={tw`text-blue-900 text-lg font-bold text-center`}>
               Add
             </Text>
@@ -65,19 +72,27 @@ const AddFriendsList = () => {
               <Col style={tw`flex-1`}>
                 <Text style={tw`text-blue-900 text-lg`}>{name}</Text>
               </Col>
-              <Col style={tw`w-20 mx-1`}>
-                <Text
-                  style={tw`text-blue-900 text-md bg-white text-center p-1 rounded-lg shadow-md uppercase font-bold`}
+              <Col style={tw`w-20 mx-1 mr-4`}>
+                <TouchableOpacity
+                  style={tw` bg-white  p-1 rounded-lg shadow-md `}
                 >
-                  Check
-                </Text>
+                  <Text
+                    style={tw`text-blue-900 text-md text-center uppercase font-bold`}
+                  >
+                    Check
+                  </Text>
+                </TouchableOpacity>
               </Col>
               <Col style={tw`w-20`}>
-                <Text
-                  style={tw`text-blue-900 text-md bg-white text-center p-1 rounded-lg shadow-md uppercase font-bold`}
+                <TouchableOpacity
+                  style={tw` bg-white  p-1 rounded-lg shadow-md `}
                 >
+                  <Text
+                    style={tw`text-blue-900 text-md text-center uppercase font-bold`}
+                  >
                   Send
-                </Text>
+                  </Text>
+                  </TouchableOpacity>
               </Col>
             </Row>
           )}

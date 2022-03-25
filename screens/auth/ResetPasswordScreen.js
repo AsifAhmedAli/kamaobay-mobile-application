@@ -24,8 +24,8 @@ const ResetPasswordScreen = () => {
         style={tw`flex items-center justify-center bg-blue-900 h-42 rounded-bl-xl`}
       >
         <Image
-          // source={require("../../assets/auth/white.png")}
-          style={[tw`h-full w-3/4`, { resizeMode: "contain" }]}
+          source={require("../../assets/auth/logo.png")}
+          style={[tw``, { resizeMode: "contain" }]}
         />
       </View>
       <View style={tw`px-8 my-4`}>
@@ -39,13 +39,19 @@ const ResetPasswordScreen = () => {
           <TouchableOpacity
             style={tw`flex flex-row items-center justify-between bg-white rounded-full py-2 px-4`}
           >
-            <Icon name="google" type="antdesign" />
+            <Image
+              source={require("../../assets/auth/google.png")}
+              style={[tw`h-4`, { resizeMode: "contain" }]}
+            />
             <Text style={tw`text-lg px-3`}>Google</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={tw`flex flex-row items-center justify-between bg-white rounded-full py-2 px-4 bg-blue-500`}
           >
-            <Icon name="facebook" type="zocial" color="white" />
+            <Image
+              source={require("../../assets/auth/facebook.png")}
+              style={[tw``, { resizeMode: "contain" }]}
+            />
             <Text style={tw`text-lg px-3 text-white`}>Facebook</Text>
           </TouchableOpacity>
         </View>
@@ -61,7 +67,7 @@ const ResetPasswordScreen = () => {
                 Username
               </Text>
               <TextInput
-                icon={<Icon name="user" type="antdesign" color="blue" />}
+                icon={require("../../assets/auth/user.png")}
                 onChangeText={handleChange("username")}
                 onBlur={handleBlur("username")}
                 value={values.username}
@@ -71,7 +77,7 @@ const ResetPasswordScreen = () => {
                 Email
               </Text>
               <TextInput
-                icon={<Icon name="email" type="materialCommunityIcons" color="blue" />}
+                icon={require("../../assets/auth/email.png")}
                 onChangeText={handleChange("email")}
                 onBlur={handleBlur("email")}
                 value={values.email}
@@ -94,7 +100,7 @@ const ResetPasswordScreen = () => {
         </Formik>
       </View>
       <View style={tw`flex flex-1 justify-end`}>
-        <NavBar  />
+        <NavBar />
       </View>
     </SafeAreaView>
   )

@@ -5,17 +5,26 @@ import tw from "twrnc"
 const ChatHeader = () => {
   return (
     <View
-      style={tw`bg-white rounded-t-xl px-6 py-2 flex-row items-start justify-between`}
+      style={tw`bg-white rounded-t-xl px-6 pb-2 pt-4 flex-row items-center justify-between`}
     >
       <View>
-        <Image style={tw`h-8 w-8 bg-blue-900 rounded-full`} />
+        <Image
+          source={require("../../assets/dashboard/chat/back.png")}
+          style={[tw`h-6 w-6`, { resizeMode: "contain" }]}
+        />
       </View>
       <View style={tw`flex-1 items-center`}>
-        <Image style={tw`h-10 w-10 bg-blue-900 rounded-full mb-2`} />
-        <Text>Elza</Text>
+        <Image
+          source={require("../../assets/dashboard/chat/u1.png")}
+          style={[tw`h-12 w-12 rounded-full`, { resizeMode: "contain" }]}
+        />
+        <Text style={tw`text-blue-900 font-bold`}>Elza</Text>
       </View>
       <View>
-        <Image style={tw`h-8 w-8 bg-blue-900 rounded-full`} />
+        <Image
+          source={require("../../assets/dashboard/chat/option.png")}
+          style={[tw`h-6 w-6`, { resizeMode: "contain" }]}
+        />
       </View>
     </View>
   )

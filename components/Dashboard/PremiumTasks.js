@@ -59,7 +59,7 @@ const PremiumTasks = () => {
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={({ item: { text, stars, image } }) => (
-          <View>
+          <View >
             <View
               style={tw`flex items-center bg-white w-24 rounded-lg mr-4 my-2 px-4 py-6`}
             >

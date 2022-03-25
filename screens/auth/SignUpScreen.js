@@ -3,7 +3,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
+  
   TouchableOpacity,
   View,
 } from "react-native"
@@ -15,6 +15,7 @@ import { Formik } from "formik"
 import Button from "../../components/Auth/Button"
 import { Icon } from "react-native-elements"
 import NavBar from "../../components/home/NavBar"
+import TextInput from "../../components/Auth/TextInput"
 
 const SignUpScreen = () => {
   const navigation = useNavigation()
@@ -24,8 +25,8 @@ const SignUpScreen = () => {
         style={tw`flex items-center justify-center bg-blue-900 h-42 rounded-bl-xl`}
       >
         <Image
-          // source={require("../../assets/auth/white.png")}
-          style={[tw`h-full w-3/4`, { resizeMode: "contain" }]}
+          source={require("../../assets/auth/logo.png")}
+          style={[tw``, { resizeMode: "contain" }]}
         />
       </View>
       <View style={tw`px-8 my-4`}>
@@ -39,13 +40,19 @@ const SignUpScreen = () => {
           <TouchableOpacity
             style={tw`flex flex-row items-center justify-between bg-white rounded-full py-2 px-4`}
           >
-            <Icon name="google" type="antdesign" />
+            <Image
+              source={require("../../assets/auth/google.png")}
+              style={[tw`h-4`, { resizeMode: "contain" }]}
+            />
             <Text style={tw`text-lg px-3`}>Google</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={tw`flex flex-row items-center justify-between bg-white rounded-full py-2 px-4 bg-blue-500`}
           >
-            <Icon name="facebook" type="zocial" color="white" />
+            <Image
+              source={require("../../assets/auth/facebook.png")}
+              style={[tw``, { resizeMode: "contain" }]}
+            />
             <Text style={tw`text-lg px-3 text-white`}>Facebook</Text>
           </TouchableOpacity>
         </View>
@@ -67,7 +74,7 @@ const SignUpScreen = () => {
                 Username
               </Text>
               <TextInput
-                style={tw`bg-white rounded-full py-2 px-6 w-full mb-4`}
+                icon={require("../../assets/auth/user.png")}
                 onChangeText={handleChange("username")}
                 onBlur={handleBlur("username")}
                 value={values.username}
@@ -77,7 +84,7 @@ const SignUpScreen = () => {
                 Fullname
               </Text>
               <TextInput
-                style={tw`bg-white rounded-full py-2 px-6 w-full mb-4`}
+                icon={require("../../assets/auth/profile.png")}
                 onChangeText={handleChange("fullname")}
                 onBlur={handleBlur("fullname")}
                 value={values.fullname}
@@ -88,7 +95,7 @@ const SignUpScreen = () => {
                 Email
               </Text>
               <TextInput
-                style={tw`bg-white rounded-full py-2 px-6 w-full mb-4`}
+                icon={require("../../assets/auth/email.png")}
                 onChangeText={handleChange("email")}
                 onBlur={handleBlur("email")}
                 value={values.email}
@@ -99,7 +106,7 @@ const SignUpScreen = () => {
                 Contact
               </Text>
               <TextInput
-                style={tw`bg-white rounded-full py-2 px-6 w-full mb-4`}
+                icon={require("../../assets/auth/contact.png")}
                 onChangeText={handleChange("phone")}
                 onBlur={handleBlur("phone")}
                 value={values.phone}
@@ -109,8 +116,7 @@ const SignUpScreen = () => {
                 Password
               </Text>
               <TextInput
-                style={tw` bg-white rounded-full py-2 px-6 w-full mb-1`}
-                icon="pass"
+                icon={require("../../assets/auth/password.png")}
                 onChangeText={handleChange("password")}
                 onBlur={handleBlur("password")}
                 value={values.password}

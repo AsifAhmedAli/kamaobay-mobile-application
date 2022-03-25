@@ -19,8 +19,11 @@ const FriendScreen = () => {
           style={tw`flex-row py-4 border border-dashed border-blue-900 rounded-lg  items-center justify-evenly`}
           onPress={() => navigation.navigate("AddFriendScreen")}
         >
-          <Image style={tw`w-12 h-12 p-1 bg-blue-900`} />
-          <Text style={tw`text-2xl text-blue-900`}>Add new Friend</Text>
+          <Image
+            source={require("../../assets/dashboard/friendList/addFriend.png")}
+            style={[tw`h-8 w-8`, { resizeMode: "contain" }]}
+          />
+          <Text style={tw`text-xl text-blue-900 font-bold`}>Add new Friends</Text>
         </TouchableOpacity>
         <FriendsList />
       </ScrollView>

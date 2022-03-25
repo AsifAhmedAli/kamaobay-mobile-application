@@ -22,49 +22,66 @@ const ModalScreen4 = () => {
           setShow(!show)
         }}
       >
-        <View style={tw`m-auto p-5 bg-blue-900 h-3/4 w-3/4 rounded-lg`}>
+        <View style={tw`m-auto p-8 bg-blue-900 h-5/6 w-11/12 rounded-lg`}>
           <TouchableOpacity
-            style={tw`w-6 h-6 bg-white rounded-full p-1 right-4 top-4 absolute`}
+            style={tw`right-4 top-4 absolute`}
             onPress={() => setShow(false)}
           >
-            <Text style={tw`text-center`}>X</Text>
+            <Image
+              source={require("../../assets/dashboard/modals/cross.png")}
+              style={[tw`h-7 w-7`, { resizeMode: "contain" }]}
+            />
           </TouchableOpacity>
           <View style={tw`flex items-center justify-center mt-10`}>
-            <Text style={tw`text-white text-xl`}>Wow, You Are Awesome!</Text>
+            <Text style={tw`text-white text-xl`}>Opps, Don't Loss Your Hope!</Text>
             <View style={tw`flex-row items-end`}>
-              <Text style={tw`text-white text-4xl font-bold mr-2`}>99</Text>
+              <Text style={tw`text-white text-4xl font-bold mr-2`}>00</Text>
               <Text style={tw`text-white`}>Points</Text>
             </View>
-            <Text style={tw`text-white text-xs`}>22:00 am, %th Dec 2021</Text>
+            <Text style={tw`text-white text-sm`}>22:00 am, 5th Dec 2021</Text>
           </View>
           <Image
-            style={[tw`w-full h-38`, { resizeMode: "contain" }]}
-            source={require("../../assets/modal/loose.png")}
+            source={require("../../assets/dashboard/modals/loose.png")}
+            style={[tw`mx-auto mb-4`, { resizeMode: "contain" }]}
           />
+
           <View style={tw`flex-row justify-between items-center my-4`}>
-            <Text
-              style={tw`text-white text-center font-bold border border-white rounded-md py-3 px-6 w-30`}
-            >
-              Claim
-            </Text>
-            <Text
-              style={tw`text-blue-900 text-center font-bold bg-white rounded-md py-3 px-6 w-30`}
-            >
-              New Task
-            </Text>
+            <TouchableOpacity>
+              <Text
+                style={tw`text-white text-center font-bold border border-white rounded-md py-3 px-6 w-30`}
+              >
+                Claim
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text
+                style={tw`text-blue-900 text-center font-bold bg-white rounded-md py-3 px-6 w-30`}
+              >
+                New Task
+              </Text>
+            </TouchableOpacity>
           </View>
           <View>
             <View style={tw`flex-row items-center my-2`}>
-              <Image style={tw`w-4 h-4 bg-white rounded-full mr-4`} />
+              <Image
+                source={require("../../assets/dashboard/modals/user.png")}
+                style={[tw`h-5 w-5 mr-4`, { resizeMode: "contain" }]}
+              />
               <Text style={tw`text-white`}>Fefreck Winsly!</Text>
             </View>
             <View style={tw`flex-row items-center`}>
-              <Image style={tw`w-4 h-4 bg-white rounded-full mr-4`} />
+              <Image
+                source={require("../../assets/dashboard/modals/id.png")}
+                style={[tw`h-5 w-5 mr-4`, { resizeMode: "contain" }]}
+              />
               <Text style={tw`text-white`}>#3455869</Text>
             </View>
-            <View style={tw`flex-row items-center`}>
-              <Image style={tw`w-4 h-4 bg-white rounded-full mr-4 my-2`} />
-              <Text style={tw`text-white`}>Watching Video</Text>
+            <View style={tw`flex-row items-center my-2`}>
+              <Image
+                source={require("../../assets/dashboard/modals/task.png")}
+                style={[tw`h-5 w-5 mr-4`, { resizeMode: "contain" }]}
+              />
+              <Text style={tw`text-white`}>Games</Text>
             </View>
           </View>
         </View>

@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from "react-native"
 import React, { useRef, useState } from "react"
@@ -29,7 +30,7 @@ const Chatting = () => {
     { id: 6, name: "u", message: "Helloasdasc adad a af f sdf  fs" },
     { id: 7, name: "Elza", message: "Hellosfa ew dq f q d fffffs " },
   ]
-  const fl =useRef(null)
+  const fl = useRef(null)
   return (
     <View style={tw`flex-1 px-6 bg-white`}>
       <FlatList
@@ -43,23 +44,24 @@ const Chatting = () => {
         renderItem={({ item: { name, message } }) => (
           <View style={tw`my-2`}>
             {name == "u" ? (
-              <View style={tw`flex-row items-center justify-end`}>
+              <View style={tw`flex-row items-end justify-end`}>
                 <Text
                   style={tw`bg-blue-900 p-4 text-white w-52 rounded-xl font-semibold`}
                 >
                   {message}
                 </Text>
                 <Image
-                  // source={image}
-                  style={tw`h-10 w-10 bg-blue-400 rounded-full ml-4`}
+                  source={require("../../assets/dashboard/chat/u1.png")}
+                  style={tw`h-12 w-12 ml-4 bg-blue-900 rounded-full`}
                 />
               </View>
             ) : (
-              <View style={tw`flex-row items-center`}>
+              <View style={tw`flex-row items-end`}>
                 <Image
-                  // source={image}
-                  style={tw`h-10 w-10 bg-blue-200 rounded-full mr-4`}
+                  source={require("../../assets/dashboard/chat/u5.png")}
+                  style={tw`h-12 w-12 mr-4 bg-blue-900 rounded-full`}
                 />
+
                 <Text
                   style={tw`bg-blue-100 p-4 rounded-xl w-52 text-blue-900 font-semibold`}
                 >
@@ -74,7 +76,12 @@ const Chatting = () => {
         style={tw`flex-row items-center mb-2 rounded-lg justify-between bg-gray-100 py-2 px-4`}
       >
         <View style={tw`flex-row`}>
-          <Image style={tw`w-6 h-6 rounded-full bg-blue-900 mr-4`} />
+          <TouchableOpacity>
+            <Image
+              source={require("../../assets/dashboard/chat/emoji.png")}
+              style={tw`h-6 w-6 mr-2`}
+            />
+          </TouchableOpacity>
           <TextInput
             style={tw`text-blue-900 w-50 `}
             onChangeText={(text) => setTextInputValue(text)}
@@ -84,8 +91,18 @@ const Chatting = () => {
           />
         </View>
         <View style={tw`flex-row`}>
-          <Image style={tw`w-6 h-6 rounded-full bg-blue-900 mr-4`} />
-          <Image style={tw`w-6 h-6 rounded-full bg-blue-900`} />
+          <TouchableOpacity>
+            <Image
+              source={require("../../assets/dashboard/chat/attach.png")}
+              style={tw`h-8 w-8 mr-2`}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require("../../assets/dashboard/chat/send.png")}
+              style={tw`h-8 w-8`}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </View>

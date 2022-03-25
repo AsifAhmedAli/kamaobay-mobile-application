@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, View } from "react-native"
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
 import { useNavigation } from "@react-navigation/native"
@@ -8,42 +8,40 @@ const FriendsList = () => {
     {
       id: 1,
       status: "online",
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/dashboard/friendList/u1.png"),
     },
     {
       id: 2,
       status: "offline",
 
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/dashboard/friendList/u2.png"),
     },
     {
       id: 3,
       status: "online",
 
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/dashboard/friendList/u3.png"),
     },
     {
       id: 4,
       status: "offline",
 
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/dashboard/friendList/u4.png"),
     },
     {
       id: 5,
       status: "offline",
 
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/dashboard/friendList/u5.png"),
     },
     {
       id: 6,
       status: "online",
 
-      image: require("../../assets/home_page/ad.png"),
+      image: require("../../assets/dashboard/friendList/u1.png"),
     },
   ]
   return (
-    <View>
-      <Text style={tw`text-blue-900 font-bold my-4`}>How to earn</Text>
       <FlatList
         style={tw``}
         data={data}
@@ -64,28 +62,32 @@ const FriendsList = () => {
                 }`}
               >
                 <Image
-                  // source={image}
-                  style={tw`bg-gray-200 rounded-full w-14 h-14`}
-                  // style={[tw`h-14 w-16 rounded-full`, { resizeMode: "contain" }]}
+                  source={image}
+                  style={[tw`h-14 w-14`, { resizeMode: "contain" }]}
                 />
               </View>
             </View>
-            <View
+            <TouchableOpacity
               style={tw`flex items-center p-2 bg-blue-100 p-4 rounded-lg h-full`}
             >
-              <Image style={tw`w-10 h-10 bg-blue-900 rounded-full mb-2`} />
-              <Text style={tw`text-blue-900 font-semibold`}>Message</Text>
-            </View>
-            <View
+              <Image
+                source={require("../../assets/dashboard/friendList/message.png")}
+                style={[tw`h-8 w-8 mb-3`, { resizeMode: "contain" }]}
+              />
+              <Text style={tw`text-blue-900 font-bold`}>Message</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
               style={tw`flex items-center p-2 bg-blue-100 p-4 rounded-lg h-full`}
             >
-              <Image style={tw`w-10 h-10 bg-blue-900 rounded-full mb-2`} />
-              <Text style={tw`text-blue-900 font-semibold`}>Challenge</Text>
-            </View>
+              <Image
+                source={require("../../assets/dashboard/friendList/challenge.png")}
+                style={[tw`h-8 w-8 mb-3`, { resizeMode: "contain" }]}
+              />
+              <Text style={tw`text-blue-900 font-bold`}>Challenge</Text>
+            </TouchableOpacity>
           </View>
         )}
       />
-    </View>
   )
 }
 
