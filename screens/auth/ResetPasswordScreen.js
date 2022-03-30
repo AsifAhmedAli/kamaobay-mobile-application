@@ -15,42 +15,35 @@ import tw from "twrnc"
 import NavBar from "../../components/home/NavBar"
 import Button from "../../components/Auth/Button"
 import TextInput from "../../components/Auth/TextInput"
+import { authScreen, flexBoxRow, paddingX } from "../../styles/AppStyles"
 
 const ResetPasswordScreen = () => {
   const navigation = useNavigation()
   return (
     <SafeAreaView style={tw`h-full`}>
-      <View
-        style={tw`flex items-center justify-center bg-blue-900 h-42 rounded-bl-xl`}
-      >
+      <View style={authScreen.authHeader}>
         <Image
           source={require("../../assets/auth/logo.png")}
-          style={[tw``, { resizeMode: "contain" }]}
+          style={{ resizeMode: "contain" }}
         />
       </View>
-      <View style={tw`px-8 my-4`}>
-        <Text style={tw`text-blue-900 text-xl font-bold my-2`}>
-          Welcome Back
-        </Text>
+      <View style={[tw` my-4`, paddingX]}>
+        <Text style={authScreen.textHeading}>Welcome Back</Text>
         <Text style={tw`mb-4`}>
           We make it easy for everyone to maximize their investment
         </Text>
-        <View style={tw`flex flex-row items-center justify-between`}>
-          <TouchableOpacity
-            style={tw`flex flex-row items-center justify-between bg-white rounded-full py-2 px-4`}
-          >
+        <View style={flexBoxRow}>
+          <TouchableOpacity style={[authScreen.loginGoogle, flexBoxRow]}>
             <Image
               source={require("../../assets/auth/google.png")}
               style={[tw`h-4`, { resizeMode: "contain" }]}
             />
             <Text style={tw`text-lg px-3`}>Google</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={tw`flex flex-row items-center justify-between bg-white rounded-full py-2 px-4 bg-blue-500`}
-          >
+          <TouchableOpacity style={[authScreen.loginFacebook, flexBoxRow]}>
             <Image
               source={require("../../assets/auth/facebook.png")}
-              style={[tw``, { resizeMode: "contain" }]}
+              style={{ resizeMode: "contain" }}
             />
             <Text style={tw`text-lg px-3 text-white`}>Facebook</Text>
           </TouchableOpacity>
@@ -63,9 +56,7 @@ const ResetPasswordScreen = () => {
         >
           {({ handleChange, handleBlur, handleSubmit, values }) => (
             <View>
-              <Text style={tw`text-blue-900 font-semibold px-4 py-2`}>
-                Username
-              </Text>
+              <Text style={authScreen.labelText}> Username</Text>
               <TextInput
                 icon={require("../../assets/auth/user.png")}
                 onChangeText={handleChange("username")}
@@ -73,9 +64,7 @@ const ResetPasswordScreen = () => {
                 value={values.username}
                 placeholder="Username"
               />
-              <Text style={tw`text-blue-900 font-semibold px-4 py-2`}>
-                Email
-              </Text>
+              <Text style={authScreen.labelText}> Email</Text>
               <TextInput
                 icon={require("../../assets/auth/email.png")}
                 onChangeText={handleChange("email")}
@@ -86,10 +75,10 @@ const ResetPasswordScreen = () => {
               />
 
               <Button onPress={handleSubmit} title="Check Your Email" />
-              <View style={tw`flex flex-row my-4 items-center justify-center`}>
+              <View style={authScreen.linkSection}>
                 <Text>New on our platform? </Text>
                 <Text
-                  style={tw`text-blue-900 underline`}
+                  style={authScreen.linkText}
                   onPress={() => navigation.navigate("SignUpScreen")}
                 >
                   Create an account

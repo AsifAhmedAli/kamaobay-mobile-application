@@ -2,10 +2,11 @@ import { Image, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
 import { Icon } from "react-native-elements"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const Header = () => {
   return (
-    <View style={tw`p-8 bg-blue-900 rounded-bl-2xl`}>
+    <View style={dashboardScreen.headerContainer}>
       <View style={tw`flex flex-row`}>
         <View style={tw`flex-1 items-start`}>
           <Image

@@ -14,38 +14,39 @@ import Earning from "../components/home/Earning"
 import NavBar from "../components/home/NavBar"
 import Pricing from "../components/home/Pricing"
 import { useNavigation } from "@react-navigation/native"
+import { backgroundColor, homeScreen, paddingX, } from "../styles/AppStyles"
 
 const HomeScreen = () => {
   const navigation = useNavigation()
   return (
-    <SafeAreaView style={tw`bg-gray-200 h-full`}>
+    <SafeAreaView style={backgroundColor}>
       <Header />
-      <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
+      <ScrollView style={paddingX} showsVerticalScrollIndicator={false}>
         <Intro />
         <Earning />
         <Pricing />
       </ScrollView>
       <View style={tw`flex-row`}>
         <TouchableOpacity
-          style={tw`p-1 mx-5 shadow rounded-lg bg-rose-200`}
+          style={homeScreen.modalButton}
           onPress={() => navigation.navigate("ModalScreen1")}
         >
           <Text>Modal 1</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={tw`p-1 mx-5 shadow rounded-lg bg-rose-200`}
+          style={homeScreen.modalButton}
           onPress={() => navigation.navigate("ModalScreen2")}
         >
           <Text>Modal 2</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={tw`p-1 mx-5 shadow rounded-lg bg-rose-200`}
+          style={homeScreen.modalButton}
           onPress={() => navigation.navigate("ModalScreen3")}
         >
           <Text>Modal 3</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={tw`p-1 mx-5 shadow rounded-lg bg-rose-200`}
+          style={homeScreen.modalButton}
           onPress={() => navigation.navigate("ModalScreen4")}
         >
           <Text>Modal 4</Text>
@@ -58,4 +59,4 @@ const HomeScreen = () => {
 
 export default HomeScreen
 
-const styles = StyleSheet.create({})
+
