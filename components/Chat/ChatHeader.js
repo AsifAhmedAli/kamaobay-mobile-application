@@ -1,29 +1,28 @@
 import { Image, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const ChatHeader = () => {
   return (
-    <View
-      style={tw`bg-white rounded-t-xl px-6 pb-2 pt-4 flex-row items-center justify-between`}
-    >
+    <View style={dashboardScreen.chattingHeaderContainer}>
       <View>
         <Image
           source={require("../../assets/dashboard/chat/back.png")}
-          style={[tw`h-6 w-6`, { resizeMode: "contain" }]}
+          style={dashboardScreen.chattingOption}
         />
       </View>
-      <View style={tw`flex-1 items-center`}>
+      <View style={dashboardScreen.headerFlex}>
         <Image
           source={require("../../assets/dashboard/chat/u1.png")}
-          style={[tw`h-12 w-12 rounded-full`, { resizeMode: "contain" }]}
+          style={dashboardScreen.chattingImage}
         />
-        <Text style={tw`text-blue-900 font-bold`}>Elza</Text>
+        <Text style={dashboardScreen.chattingHeaderText}>Elza</Text>
       </View>
       <View>
         <Image
           source={require("../../assets/dashboard/chat/option.png")}
-          style={[tw`h-6 w-6`, { resizeMode: "contain" }]}
+          style={dashboardScreen.chattingOption}
         />
       </View>
     </View>

@@ -1,7 +1,6 @@
 import {
   FlatList,
   Image,
-  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
@@ -9,6 +8,7 @@ import {
 } from "react-native"
 import React, { useRef, useState } from "react"
 import tw from "twrnc"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const Chatting = () => {
   const [textInputValue, setTextInputValue] = useState("")
@@ -32,7 +32,7 @@ const Chatting = () => {
   ]
   const fl = useRef(null)
   return (
-    <View style={tw`flex-1 px-6 bg-white`}>
+    <View style={dashboardScreen.chatting}>
       <FlatList
         ref={fl}
         onContentSizeChange={() => fl.current.scrollToEnd()}
@@ -44,63 +44,53 @@ const Chatting = () => {
         renderItem={({ item: { name, message } }) => (
           <View style={tw`my-2`}>
             {name == "u" ? (
-              <View style={tw`flex-row items-end justify-end`}>
-                <Text
-                  style={tw`bg-blue-900 p-4 text-white w-52 rounded-xl font-semibold`}
-                >
-                  {message}
-                </Text>
+              <View style={dashboardScreen.chattingUser1Container}>
+                <Text style={dashboardScreen.chattingUser1Text}>{message}</Text>
                 <Image
                   source={require("../../assets/dashboard/chat/u1.png")}
-                  style={tw`h-12 w-12 ml-4 bg-blue-900 rounded-full`}
+                  style={dashboardScreen.chattingUserImage}
                 />
               </View>
             ) : (
-              <View style={tw`flex-row items-end`}>
+              <View style={dashboardScreen.chattingUser2Container}>
                 <Image
                   source={require("../../assets/dashboard/chat/u5.png")}
-                  style={tw`h-12 w-12 mr-4 bg-blue-900 rounded-full`}
+                  style={dashboardScreen.chattingUserImage}
                 />
 
-                <Text
-                  style={tw`bg-blue-100 p-4 rounded-xl w-52 text-blue-900 font-semibold`}
-                >
-                  {message}
-                </Text>
+                <Text style={dashboardScreen.chattingUser2text}>{message}</Text>
               </View>
             )}
           </View>
         )}
       />
-      <View
-        style={tw`flex-row items-center mb-2 rounded-lg justify-between bg-gray-100 py-2 px-4`}
-      >
-        <View style={tw`flex-row`}>
+      <View style={dashboardScreen.inputContainer}>
+        <View style={dashboardScreen.inputFlex}>
           <TouchableOpacity>
             <Image
               source={require("../../assets/dashboard/chat/emoji.png")}
-              style={tw`h-6 w-6 mr-2`}
+              style={dashboardScreen.inputImage1}
             />
           </TouchableOpacity>
           <TextInput
-            style={tw`text-blue-900 w-50 `}
+            style={dashboardScreen.inputText}
             onChangeText={(text) => setTextInputValue(text)}
             value={textInputValue}
             multiline={true}
             placeholder="Type a message..."
           />
         </View>
-        <View style={tw`flex-row`}>
+        <View style={dashboardScreen.inputFlex}>
           <TouchableOpacity>
             <Image
               source={require("../../assets/dashboard/chat/attach.png")}
-              style={tw`h-8 w-8 mr-2`}
+              style={dashboardScreen.inputImage1}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image
               source={require("../../assets/dashboard/chat/send.png")}
-              style={tw`h-8 w-8`}
+              style={dashboardScreen.inputImage2}
             />
           </TouchableOpacity>
         </View>
@@ -111,4 +101,3 @@ const Chatting = () => {
 
 export default Chatting
 
-const styles = StyleSheet.create({})

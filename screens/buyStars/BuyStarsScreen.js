@@ -6,12 +6,13 @@ import Intro from '../../components/Dashboard/Intro'
 import BuyStars from '../../components/Stars/BuyStars'
 import NavBar from '../../components/Dashboard/NavBar'
 import tw from "twrnc"
+import { backgroundColor, paddingX } from '../../styles/AppStyles'
 
 const BuyStarsScreen = () => {
   return (
-    <SafeAreaView style={tw`h-full`}>
+    <SafeAreaView style={backgroundColor}>
       <Header />
-      <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
+      <ScrollView style={paddingX} showsVerticalScrollIndicator={false}>
         <Intro />
         <BuyStars />
       </ScrollView>

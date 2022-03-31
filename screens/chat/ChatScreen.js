@@ -6,10 +6,11 @@ import NavBar from "../../components/Dashboard/NavBar"
 import tw from "twrnc"
 import ChatHeader from "../../components/Chat/ChatHeader"
 import Chatting from "../../components/Chat/Chatting"
+import { backgroundColor } from "../../styles/AppStyles"
 
 const ChatScreen = () => {
   return (
-    <SafeAreaView style={tw`h-full`}>
+    <SafeAreaView style={backgroundColor}>
       <Header />
       <ChatHeader />
       <Chatting />

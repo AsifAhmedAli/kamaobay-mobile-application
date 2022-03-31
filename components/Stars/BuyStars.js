@@ -1,7 +1,8 @@
-import { FlatList, Image, StyleSheet, Text, View } from "react-native"
+import { Image, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
 import { FlatGrid } from "react-native-super-grid"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const BuyStars = () => {
   const data = [
@@ -38,18 +39,18 @@ const BuyStars = () => {
   ]
   return (
     <View>
-      <Text style={tw`text-blue-900 font-bold text-xl`}>Buy Now</Text>
-      <View style={tw``}>
+      <Text style={dashboardScreen.starsHeading}>Buy Now</Text>
+      <View>
         <FlatGrid
           data={data}
           spacing={10}
           renderItem={({ item: { price, stars } }) => (
-            <View style={tw`flex bg-blue-900 rounded-lg p-4`}>
+            <View style={dashboardScreen.starsContainer}>
               <Image
                 source={require("../../assets/dashboard/stars/star.png")}
-                style={[tw`h-10 w-14`, { resizeMode: "contain" }]}
+                style={dashboardScreen.starsImage}
               />
-              <Text style={tw`text-white text-xl font-semibold`}>
+              <Text style={dashboardScreen.starsPrice}>
                 RS {price}
               </Text>
               <Text style={tw`text-white`}>{stars} Stars</Text>
