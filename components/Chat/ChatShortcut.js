@@ -1,6 +1,7 @@
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const ChatShortcut = () => {
   const data = [
@@ -35,13 +36,13 @@ const ChatShortcut = () => {
     },
   ]
   return (
-    <View style={tw`flex-row items-center px-8`}>
+    <View style={dashboardScreen.chatShortcutContainer}>
       <TouchableOpacity
-        style={tw`flex items-center w-16 rounded-lg border border-dashed border-blue-900 mr-4 my-2 p-4`}
+        style={dashboardScreen.addImageContainer}
       >
         <Image
           source={require("../../assets/dashboard/chat/add.png")}
-          style={[tw`h-10 w-14`, { resizeMode: "contain" }]}
+          style={dashboardScreen.addImage}
         />
       </TouchableOpacity>
       <FlatList
@@ -52,7 +53,7 @@ const ChatShortcut = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item: { status, image } }) => (
           <View
-            style={tw`flex items-center bg-blue-50 w-18 rounded-lg mr-4 my-2 p-4`}
+            style={dashboardScreen.imageContainer}
           >
             <View
               style={tw`absolute z-50 right-1 top-4 h-5 w-5 border-2 border-white rounded-full ${
@@ -66,7 +67,7 @@ const ChatShortcut = () => {
             >
               <Image
                 source={image}
-                style={[tw`h-12 w-12 rounded-full`, { resizeMode: "contain" }]}
+                style={dashboardScreen.imageSize}
               />
             </View>
           </View>

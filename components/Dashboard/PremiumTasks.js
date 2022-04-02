@@ -8,6 +8,7 @@ import {
 } from "react-native"
 import React from "react"
 import tw from "twrnc"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const PremiumTasks = () => {
   const data = [
@@ -50,7 +51,7 @@ const PremiumTasks = () => {
   ]
   return (
     <View>
-      <Text style={tw`text-blue-900 font-bold text-lg my-4`}>Premium</Text>
+      <Text style={dashboardScreen.dashboardHeading}>Premium</Text>
 
       <FlatList
         data={data}
@@ -59,21 +60,14 @@ const PremiumTasks = () => {
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={({ item: { text, stars, image } }) => (
-          <View >
-            <View
-              style={tw`flex items-center bg-white w-24 rounded-lg mr-4 my-2 px-4 py-6`}
-            >
-              <Image
-                source={image}
-                style={[tw`h-10 w-14`, { resizeMode: "contain" }]}
-              />
-              <Text
-                style={tw`text-blue-900 text-xs text-center underline`}
-              >
+          <View>
+            <View style={dashboardScreen.premiumTaskContainer}>
+              <Image source={image} style={dashboardScreen.earningImage} />
+              <Text style={dashboardScreen.premiumTaskTextm}>
                 use {stars} stars
               </Text>
             </View>
-            <Text style={tw`text-center font-bold text-blue-900`}>{text}</Text>
+            <Text style={dashboardScreen.premiumTaskCaption}>{text}</Text>
           </View>
         )}
       />

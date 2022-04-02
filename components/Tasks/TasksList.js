@@ -1,7 +1,7 @@
-import { FlatList, StyleSheet, Text, View,Image } from "react-native"
+import { FlatList, Text, View,Image } from "react-native"
 import React from "react"
-import tw from "twrnc"
 import { Col, Row, Grid } from "react-native-easy-grid"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const TasksList = () => {
   const data = [
@@ -40,37 +40,36 @@ const TasksList = () => {
   return (
     <View>
       <Grid>
-        <Row style={tw`flex py-2 items-center justify-between`}>
-          <Col style={tw`flex-1`}>
-            <Text style={tw`text-blue-900 text-lg font-bold`}>Task</Text>
+        <Row style={dashboardScreen.headingRow}>
+          <Col style={dashboardScreen.col1}>
+            <Text style={dashboardScreen.mainColText}>Task</Text>
           </Col>
-          <Col style={tw`w-24 `}>
-            <Text style={tw`text-blue-900 text-lg font-bold`}>Points</Text>
+          <Col style={dashboardScreen.taskCol2}>
+            <Text style={dashboardScreen.mainColText}>Points</Text>
           </Col>
-          <Col style={tw`w-14 `}>
-            <Text style={tw`text-blue-900 text-lg font-bold`}>Delete</Text>
+          <Col style={dashboardScreen.taskCol3}>
+            <Text style={dashboardScreen.mainColText}>Delete</Text>
           </Col>
         </Row>
         <FlatList
-          style={tw``}
           data={data}
           keyExtractor={(item) => item.id}
           renderItem={({ item: { id, task, points } }) => (
-            <Row style={tw`flex py-2 items-start justify-between`}>
-              <Col style={tw`flex-row flex-1 items-start`}>
+            <Row style={dashboardScreen.headingRow}>
+              <Col style={dashboardScreen.taskCol1}>
                 <Image
                   source={require("../../assets/dashboard/tasks/task.png")}
-                  style={[tw`h-4 w-4 mr-2`, { resizeMode: "contain" }]}
+                  style={dashboardScreen.taskCheckBox}
                 />
-                <Text style={tw`text-blue-900 text-md w-3/4 font-bold`}>{task}</Text>
+                <Text style={dashboardScreen.taskName}>{task}</Text>
               </Col>
-              <Col style={tw`w-24`}>
-                <Text style={tw`text-blue-900 text-md`}>{points} points</Text>
+              <Col style={dashboardScreen.taskCol2}>
+                <Text style={dashboardScreen.taskPoints}>{points} points</Text>
               </Col>
-              <Col style={tw`w-14 flex items-center`}>
+              <Col style={dashboardScreen.taskContentCol3}>
                 <Image
                   source={require("../../assets/dashboard/tasks/delete.png")}
-                  style={[tw`h-6 w-6`, { resizeMode: "contain" }]}
+                  style={dashboardScreen.taskDeleteImage}
                 />
               </Col>
             </Row>
@@ -83,4 +82,3 @@ const TasksList = () => {
 
 export default TasksList
 
-const styles = StyleSheet.create({})

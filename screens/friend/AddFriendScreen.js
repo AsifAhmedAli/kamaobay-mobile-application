@@ -6,12 +6,13 @@ import Intro from '../../components/Dashboard/Intro'
 import AddFriendsList from '../../components/Friend/AddFriendsList'
 import NavBar from '../../components/Dashboard/NavBar'
 import tw from "twrnc"
+import { backgroundColor, paddingX } from '../../styles/AppStyles'
 
 const AddFriendScreen = () => {
   return (
-    <SafeAreaView style={tw`h-full`}>
+    <SafeAreaView style={backgroundColor}>
       <Header />
-      <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
+      <ScrollView style={paddingX} showsVerticalScrollIndicator={false}>
         <Intro />
         <AddFriendsList />
       </ScrollView>

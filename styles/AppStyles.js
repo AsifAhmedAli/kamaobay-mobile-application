@@ -73,5 +73,96 @@ export const dashboardScreen = {
   inputImage2: tw`h-8 w-8`,
 
   // chatlist
-  
+
+  // char shortcut
+  chatShortcutContainer: tw`flex-row items-center px-8`,
+  addImageContainer: tw`flex items-center w-16 rounded-lg border border-dashed border-blue-900 mr-4 my-2 p-4`,
+  addImage: [tw`h-10 w-14`, { resizeMode: "contain" }],
+  imageContainer: tw`flex items-center bg-blue-50 w-18 rounded-lg mr-4 my-2 p-4`,
+  imageSize: [tw`h-12 w-12 rounded-full`, { resizeMode: "contain" }],
+
+  // chat
+
+  chatBackground: tw`bg-white rounded-t-xl py-4`,
+  chatContainer: tw`flex-row items-center justify-between border-b border-gray-100 rounded-lg my-3 p-2 py-4`,
+  chatImage: tw`h-14 w-14 mr-4 bg-blue-900 rounded-full`,
+  chatText: tw`text-blue-900 font-bold text-lg`,
+  chatMessage: tw`text-blue-900 font-semibold`,
+  chatTime: tw`text-blue-900 font-bold`,
+
+  // dashboard
+  dashboardHeading: tw`text-blue-900 font-bold text-lg my-4`,
+
+  // freeEarning
+  earningListContainer: tw`flex-row items-center bg-white w-full rounded-full my-2 p-4`,
+  earningImage: [tw`h-10 w-14`, { resizeMode: "contain" }],
+  earningItem: tw`flex-row flex-1 justify-between`,
+  earningText: tw`text-blue-900 text-lg font-bold`,
+  earningOption: [tw`h-8 w-10`, { resizeMode: "contain" }],
+
+  // premium tasks
+  premiumTaskContainer: tw`flex items-center bg-white w-24 rounded-lg mr-4 my-2 px-4 py-6`,
+  premiumTaskText: tw`text-blue-900 text-xs text-center underline`,
+  premiumTaskCaption: tw`text-center font-bold text-blue-900`,
+
+  // friends
+  // add friends list
+  headingRow: tw`flex py-2 items-center justify-between`,
+  col1: tw`flex-1`,
+  mainColText: tw`text-blue-900 text-lg font-bold`,
+  mainColTextTable: tw`text-blue-900 text-lg`,
+  col2: tw`w-20 mx-1 mr-4`,
+  subColText: tw`text-blue-900 text-lg font-bold text-center`,
+  col3: tw`w-20 `,
+  friendsButton: tw`bg-white p-1 rounded-lg shadow-md `,
+  friendsButtonText: tw`text-blue-900 text-md text-center uppercase font-bold`,
+
+  // friends screen
+  addFriendsButton: tw`flex-row py-4 border border-dashed border-blue-900 rounded-lg  items-center justify-evenly`,
+  addFriendsButtonText: tw`text-blue-900 text-xl font-bold`,
+  addFriendsButtonImage: [tw`h-8 w-8`, { resizeMode: "contain" }],
+  friendContainer: tw`flex-row items-center justify-between rounded-lg my-2 p-2`,
+  friendContainerBackground: tw`bg-blue-100 p-4 rounded-lg`,
+  friendImage: [tw`h-14 w-14`, { resizeMode: "contain" }],
+  friendSubCols: tw`flex items-center p-2 bg-blue-100 p-4 rounded-lg h-full`,
+  friendSubColImage: [tw`h-8 w-8 mb-3`, { resizeMode: "contain" }],
+  friendText: tw`text-blue-900 font-bold`,
+
+  // games
+
+  gamesHeading: tw`text-blue-900 text-xl font-bold my-4`,
+  gamesContainer: tw`flex-row items-center justify-between rounded-xl my-2 py-2 px-8 bg-blue-200`,
+  gamesTitle: tw`text-blue-900 text-lg`,
+  gamesInfo: tw`flex-row items-center`,
+  gamesInfoImage: [tw`h-4 w-4 mr-4`, { resizeMode: "contain" }],
+  gamesInfoText: tw`text-blue-900`,
+  gameImage: [tw`h-14 w-14`, { resizeMode: "contain" }],
+
+  // tasks list
+  taskCol2: tw`w-24 `,
+  taskCol3: tw`w-14 `,
+  taskCol1: tw`flex-row flex-1 items-start`,
+  taskCheckBox: [tw`h-4 w-4 mr-2`, { resizeMode: "contain" }],
+  taskName: tw`text-blue-900 text-md w-3/4 font-bold`,
+  taskPoints: tw`text-blue-900 text-md`,
+  taskContentCol3: tw`w-14 flex items-center`,
+  taskDeleteImage: [tw`h-6 w-6`, { resizeMode: "contain" }],
+
+  // wallet
+  walletStarsContainer: tw`bg-white p-6 rounded-xl shadow-lg`,
+  walletHeading: tw`text-blue-900 font-bold text-xl`,
+  walletQuantity: tw`flex-row justify-between items-center px-8 my-4`,
+  walletImage: [tw`h-10 w-14`, { resizeMode: "contain" }],
+  walletText: tw`text-2xl font-bold text-blue-900`,
+  walletButtons: tw`flex-row justify-evenly items-center`,
+  transferButton: tw`bg-gray-200 w-32 px-4 py-2 text-blue-900 rounded-xl`,
+  transferText: tw`text-center text-blue-900 text-xl`,
+  withdrawButton: tw`bg-gray-300 w-32 px-4 py-2 text-blue-900 rounded-xl`,
+  withdrawText: tw`text-center text-gray-500 text-xl`,
+  tranferContainer: tw`flex-1 items-center my-4`,
+  transferConfirmButton: tw`bg-blue-900 w-32 px-4 py-3 text-blue-900 rounded-lg`,
+  tranferConfirmText: tw`text-center text-white text-xl`,
+
+  // wallet statements
+  statementHeading: tw`text-blue-900 font-bold text-xl my-4`,
 }

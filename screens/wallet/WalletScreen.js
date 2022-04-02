@@ -7,12 +7,13 @@ import Intro from "../../components/Dashboard/Intro"
 import tw from "twrnc"
 import Stars from "../../components/Wallet/Stars"
 import Statements from "../../components/Wallet/Statements"
+import { backgroundColor, paddingX } from "../../styles/AppStyles"
 
 const WalletScreen = () => {
   return (
-    <SafeAreaView style={tw`h-full`}>
+    <SafeAreaView style={backgroundColor}>
       <Header />
-      <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
+      <ScrollView style={paddingX} showsVerticalScrollIndicator={false}>
         <Intro />
         <Stars />
         <Statements/>

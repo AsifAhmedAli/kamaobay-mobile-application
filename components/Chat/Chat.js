@@ -10,6 +10,7 @@ import {
 import React from "react"
 import tw from "twrnc"
 import { useNavigation } from "@react-navigation/native"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const Chat = () => {
   const data = [
@@ -65,30 +66,24 @@ const Chat = () => {
   const navigation = useNavigation()
   const text = "lorem ipsum has asd..."
   return (
-    <View style={tw`bg-white rounded-t-xl py-4`}>
+    <View style={dashboardScreen.chatBackground}>
       <ScrollView style={tw`px-6`} showsVerticalScrollIndicator={false}>
         <FlatList
-          style={tw``}
           data={data}
           keyExtractor={(item) => item.id}
           renderItem={({ item: { id, name, time, image } }) => (
             <TouchableOpacity
-              style={tw`flex-row items-center justify-between border-b border-gray-100 rounded-lg my-3 p-2 py-4`}
+              style={dashboardScreen.chatContainer}
               onPress={() => navigation.navigate("ChatScreen")}
             >
               <View style={tw`flex-row`}>
-                <Image
-                  source={image}
-                  style={tw`h-14 w-14 mr-4 bg-blue-900 rounded-full`}
-                />
+                <Image source={image} style={dashboardScreen.chatImage} />
                 <View>
-                  <Text style={tw`text-blue-900 font-bold text-lg`}>
-                    {name}
-                  </Text>
-                  <Text style={tw`text-blue-900 font-semibold`}>{text}</Text>
+                  <Text style={dashboardScreen.chatText}>{name}</Text>
+                  <Text style={dashboardScreen.chatMessage}>{text}</Text>
                 </View>
               </View>
-              <Text style={tw`text-blue-900 font-bold`}>{time}</Text>
+              <Text style={dashboardScreen.time}>{time}</Text>
             </TouchableOpacity>
           )}
         />

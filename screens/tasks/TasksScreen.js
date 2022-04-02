@@ -6,12 +6,13 @@ import Header from '../../components/Dashboard/Header'
 import Intro from '../../components/Dashboard/Intro'
 import TasksList from '../../components/Tasks/TasksList'
 import NavBar from '../../components/Dashboard/NavBar'
+import { backgroundColor, paddingX } from '../../styles/AppStyles'
 
 const TasksScreen = () => {
   return (
-    <SafeAreaView style={tw`h-full`}>
+    <SafeAreaView style={backgroundColor}>
       <Header />
-      <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
+      <ScrollView style={paddingX} showsVerticalScrollIndicator={false}>
         <Intro />
         <TasksList />
       </ScrollView>

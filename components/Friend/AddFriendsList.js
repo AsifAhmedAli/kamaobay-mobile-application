@@ -1,14 +1,12 @@
 import {
   FlatList,
-  Image,
-  StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native"
 import React from "react"
 import { Col, Grid, Row } from "react-native-easy-grid"
-import tw from "twrnc"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const AddFriendsList = () => {
   const data = [
@@ -48,51 +46,46 @@ const AddFriendsList = () => {
   return (
     <View>
       <Grid>
-        <Row style={tw`flex py-2 items-center justify-between`}>
-          <Col style={tw`flex-1`}>
-            <Text style={tw`text-blue-900 text-lg font-bold`}>Name</Text>
+        <Row style={dashboardScreen.headingRow}>
+          <Col style={dashboardScreen.col1}>
+            <Text style={dashboardScreen.mainColText}>Name</Text>
           </Col>
-          <Col style={tw`w-20 mx-1 mr-4`}>
-            <Text style={tw`text-blue-900 text-lg font-bold text-center`}>
-              Add
-            </Text>
+          <Col style={dashboardScreen.col2}>
+            <Text style={dashboardScreen.subColText}>Add</Text>
           </Col>
-          <Col style={tw`w-20 `}>
-            <Text style={tw`text-blue-900 text-lg font-bold text-center`}>
-              Message
-            </Text>
+          <Col style={dashboardScreen.col3}>
+            <Text style={dashboardScreen.subColText}>Message</Text>
           </Col>
         </Row>
         <FlatList
-          style={tw``}
           data={data}
           keyExtractor={(item) => item.id}
           renderItem={({ item: { id, name } }) => (
-            <Row style={tw`flex py-2 items-center justify-between`}>
-              <Col style={tw`flex-1`}>
-                <Text style={tw`text-blue-900 text-lg`}>{name}</Text>
+            <Row style={dashboardScreen.headingRow}>
+              <Col style={dashboardScreen.col1}>
+                <Text style={dashboardScreen.mainColTextTable}>{name}</Text>
               </Col>
-              <Col style={tw`w-20 mx-1 mr-4`}>
+              <Col style={dashboardScreen.col2}>
                 <TouchableOpacity
-                  style={tw` bg-white  p-1 rounded-lg shadow-md `}
+                  style={dashboardScreen.friendsButton}
                 >
                   <Text
-                    style={tw`text-blue-900 text-md text-center uppercase font-bold`}
+                    style={dashboardScreen.friendsButtonText}
                   >
                     Check
                   </Text>
                 </TouchableOpacity>
               </Col>
-              <Col style={tw`w-20`}>
+              <Col style={ dashboardScreen.col3}>
                 <TouchableOpacity
-                  style={tw` bg-white  p-1 rounded-lg shadow-md `}
+                  style={dashboardScreen.friendsButton}
                 >
                   <Text
-                    style={tw`text-blue-900 text-md text-center uppercase font-bold`}
+                    style={dashboardScreen.friendsButtonText}
                   >
-                  Send
+                    Send
                   </Text>
-                  </TouchableOpacity>
+                </TouchableOpacity>
               </Col>
             </Row>
           )}
@@ -104,4 +97,3 @@ const AddFriendsList = () => {
 
 export default AddFriendsList
 
-const styles = StyleSheet.create({})

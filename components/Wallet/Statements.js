@@ -7,6 +7,7 @@ import {
 } from "react-native"
 import React, { useEffect, useRef, useState } from "react"
 import tw from "twrnc"
+import { dashboardScreen } from "../../styles/AppStyles"
 
 const Statements = () => {
   const data = [
@@ -53,7 +54,6 @@ const Statements = () => {
       withdraw: "100000",
     },
   ]
-  //   const [selected, setSelected] = useState(data[0].id)
   const [scrollIndex, setScrollIndex] = useState(0)
 
   const fl = useRef(null)
@@ -63,9 +63,8 @@ const Statements = () => {
   }, [scrollIndex])
   return (
     <View>
-      <Text style={tw`text-blue-900 font-bold text-xl my-4`}>Statement</Text>
+      <Text style={dashboardScreen.statementHeading}>Statement</Text>
       <FlatList
-        style={tw``}
         data={data}
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -153,5 +152,3 @@ const Statements = () => {
 }
 
 export default Statements
-
-const styles = StyleSheet.create({})

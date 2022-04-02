@@ -32,7 +32,7 @@ const NavBar = () => {
     },
     {
       id: 5,
-      screen: "FriendsScreen",
+      screen: "FriendScreen",
       image: require("../../assets/dashboard/friend.png"),
       title: "Friend",
     },

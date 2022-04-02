@@ -8,13 +8,14 @@ import Intro from "../../components/Dashboard/Intro"
 import FreeEarning from "../../components/Dashboard/FreeEarning"
 import PremiumTasks from "../../components/Dashboard/PremiumTasks"
 import { useNavigation } from "@react-navigation/native"
+import { backgroundColor, paddingX } from "../../styles/AppStyles"
 
 const DashboardHomeScreen = () => {
   const navigation = useNavigation()
   return (
-    <SafeAreaView style={tw`h-full`}>
+    <SafeAreaView style={backgroundColor}>
       <Header />
-      <ScrollView style={tw`px-8`} showsVerticalScrollIndicator={false}>
+      <ScrollView style={paddingX} showsVerticalScrollIndicator={false}>
         <Intro />
         <FreeEarning />
         <PremiumTasks />
@@ -39,4 +40,3 @@ const DashboardHomeScreen = () => {
 
 export default DashboardHomeScreen
 
-const styles = StyleSheet.create({})
