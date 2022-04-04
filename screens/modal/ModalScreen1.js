@@ -5,16 +5,16 @@ import {
   TouchableOpacity,
   View,
   Image,
-  TouchableOpacityBase,
 } from "react-native"
 import React, { useState } from "react"
 import tw from "twrnc"
 import { SafeAreaView } from "react-native-safe-area-context"
+import { modal } from "../../styles/AppStyles"
 
 const ModalScreen1 = () => {
   const [show, setShow] = useState(false)
   return (
-    <SafeAreaView style={tw`flex items-center justify-center`}>
+    <SafeAreaView style={modal.modal}>
       <Modal
         animationType="slide"
         transparent={true}
@@ -23,100 +23,78 @@ const ModalScreen1 = () => {
           setShow(!show)
         }}
       >
-        <View style={tw`m-auto p-8 bg-blue-900 h-5/6 w-11/12 rounded-lg`}>
+        <View style={modal.modalContainer}>
           <TouchableOpacity
-            style={tw`right-4 top-4 absolute`}
+            style={modal.modalClose}
             onPress={() => setShow(false)}
           >
             <Image
               source={require("../../assets/dashboard/modals/cross.png")}
-              style={[tw`h-7 w-7`, { resizeMode: "contain" }]}
+              style={modal.closeImage}
             />
           </TouchableOpacity>
-          <View style={tw`flex items-center justify-center mt-4`}>
-            <Text style={tw`text-white text-xl`}>Available Stars</Text>
-            <Text style={tw`text-white text-3xl font-bold`}>99,999</Text>
-            <Text style={tw`text-white text-sm`}>22:00 am, 5th Dec 2021</Text>
+          <View style={modal.header}>
+            <Text style={modal.headingText}>Available Stars</Text>
+            <Text style={modal.starCount}>99,999</Text>
+            <Text style={modal.dateTime}>22:00 am, 5th Dec 2021</Text>
           </View>
-          <View style={tw`flex-row justify-between items-center my-4`}>
+          <View style={modal.buttonsContainer}>
             <View>
-              <Text style={tw`text-white text-center mb-2`}>Withdraw</Text>
+              <Text style={modal.colText}>Withdraw</Text>
               <TouchableOpacity>
-                <Text
-                  style={tw`text-white font-bold border border-white rounded-md py-3 px-6`}
-                >
-                  10,000.00
-                </Text>
+                <Text style={modal.amount}>10,000.00</Text>
               </TouchableOpacity>
             </View>
             <View>
-              <Text style={tw`text-white text-center mb-2`}>Value Rupee</Text>
+              <Text style={modal.colText}>Value Rupee</Text>
               <TouchableOpacity>
-                <Text
-                  style={tw`text-blue-900 font-bold bg-white rounded-md py-3 px-6`}
-                >
-                  Rs 1,000.00
-                </Text>
+                <Text style={modal.amount}>Rs 1,000.00</Text>
               </TouchableOpacity>
             </View>
           </View>
-          <TouchableOpacity style={tw`bg-white py-3 rounded-lg`}>
-            <Text style={tw`text-blue-900 text-center font-bold`}>
-              Transfer Bank
-            </Text>
+          <TouchableOpacity style={modal.transferConfirmButton}>
+            <Text style={modal.transferText}>Transfer Bank</Text>
           </TouchableOpacity>
-          <Text style={tw`text-white text-center my-2`}>
-            Salary Id: #225mn6
-          </Text>
+          <Text style={modal.salaryId}>Salary Id: #225mn6</Text>
           <View>
-            <View style={tw`flex-row items-center my-2`}>
+            <View style={modal.infoContainer}>
               <Image
                 source={require("../../assets/dashboard/modals/user.png")}
-                style={[tw`h-5 w-5 mr-4`, { resizeMode: "contain" }]}
+                style={modal.infoIcon}
               />
-              <Text style={tw`text-white`}>Fefreck Winsly!</Text>
+              <Text style={modal.infoText}>Fefreck Winsly!</Text>
             </View>
-            <View style={tw`flex-row items-center`}>
+            <View style={modal.infoContainer}>
               <Image
                 source={require("../../assets/dashboard/modals/id.png")}
-                style={[tw`h-5 w-5 mr-4`, { resizeMode: "contain" }]}
+                style={modal.infoIcon}
               />
-              <Text style={tw`text-white`}>#3455869</Text>
+              <Text style={modal.infoText}>#3455869</Text>
             </View>
           </View>
-          <View style={tw``}>
-            <Text style={tw`text-white text-center mt-6 mb-4`}>
+          <View>
+            <Text style={modal.giftHeading}>
               Send GIFT To Your Friends
             </Text>
-            <View style={tw`flex-row justify-evenly items-center`}>
-              <TouchableOpacity
-                style={tw`p-2 border border-white rounded-md w-14`}
-              >
-                <Text style={tw`text-white text-center`}>100 Stars</Text>
+            <View style={modal.starsContainer}>
+              <TouchableOpacity style={modal.starBox}>
+                <Text style={modal.starText}>100 Stars</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={tw`p-2 border border-white rounded-md w-14`}
-              >
-                <Text style={tw`text-white text-center`}>200 Stars</Text>
+              <TouchableOpacity style={modal.starBox}>
+                <Text style={modal.starText}>200 Stars</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={tw`p-2 border border-white rounded-md w-14`}
-              >
-                <Text style={tw`text-white text-center`}>500 Stars</Text>
+              <TouchableOpacity style={modal.starBox}>
+                <Text style={modal.starText}>500 Stars</Text>
               </TouchableOpacity>
             </View>
-            <View style={tw`flex-row justify-evenly items-center my-2`}>
-              <TouchableOpacity
-                style={tw`p-2 border border-white rounded-md w-14`}
-              >
-                <Text style={tw`text-white text-center`}>1000 Stars</Text>
+            <View style={modal.starsContainer}>
+              <TouchableOpacity style={modal.starBox}>
+                <Text style={modal.starText}>1000 Stars</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={tw`p-2 border border-white rounded-md w-14 h-14`}
-              >
+              <TouchableOpacity style={modal.starBox}>
                 <Image
                   source={require("../../assets/dashboard/modals/add.png")}
-                  style={[tw`h-8 w-8 m-auto`, { resizeMode: "contain" }]}
+                  style={modal.starImage}
                 />
               </TouchableOpacity>
             </View>

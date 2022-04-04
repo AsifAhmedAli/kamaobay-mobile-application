@@ -114,7 +114,7 @@ export const dashboardScreen = {
   col2: tw`w-20 mx-1 mr-4`,
   subColText: tw`text-blue-900 text-lg font-bold text-center`,
   col3: tw`w-20 `,
-  friendsButton: tw`bg-white p-1 rounded-lg shadow-md `,
+  friendsButton: tw`bg-white p-1 rounded-lg shadow-lg `,
   friendsButtonText: tw`text-blue-900 text-md text-center uppercase font-bold`,
 
   // friends screen
@@ -165,4 +165,46 @@ export const dashboardScreen = {
 
   // wallet statements
   statementHeading: tw`text-blue-900 font-bold text-xl my-4`,
+}
+
+export const modal = {
+  modal: tw`flex items-center justify-center`,
+  modalContainer: tw`m-auto p-8 bg-blue-900 h-5/6 w-11/12 rounded-lg`,
+  modalClose: tw`right-4 top-4 absolute`,
+  closeImage: [tw`h-7 w-7`, { resizeMode: "contain" }],
+  header: tw`flex items-center justify-center my-4`,
+  headingText: tw`text-white text-xl`,
+  starCount: tw`text-white text-3xl font-bold`,
+  dateTime: tw`text-white text-sm`,
+  buttonsContainer: tw`flex-row justify-between items-center my-4`,
+  colText: tw`text-white text-center mb-2`,
+  amount: tw`text-white font-bold border border-white rounded-md py-3 px-6`,
+  transferConfirmButton: tw`bg-white py-3 rounded-lg`,
+  transferText: tw`text-blue-900 text-center font-bold`,
+  salaryId: tw`text-white text-center my-2`,
+  infoContainer: tw`flex-row items-center my-2`,
+  infoIcon: [tw`h-5 w-5 mr-4`, { resizeMode: "contain" }],
+  infoText: tw`text-white`,
+  giftHeading: tw`text-white text-center mt-6 mb-4`,
+  starsContainer: tw`flex-row justify-evenly items-center my-2`,
+  starBox: tw`p-2 border border-white rounded-md w-14 h-14`,
+  starText: tw`text-white text-center`,
+  starImage: [tw`h-8 w-8 m-auto`, { resizeMode: "contain" }],
+
+  // 2
+  modalHeading: tw`text-white text-xl text-center my-4`,
+  friendsContainer: tw`my-2 flex-row items-center`,
+  userContainer: tw`flex-row items-center flex-1`,
+  userImage: [tw`h-12 w-12 mr-4`, { resizeMode: "contain" }],
+  userName: tw`text-white font-bold`,
+  sendButton: tw`bg-white py-2 shadow rounded-lg w-18`,
+  sendText: tw`text-blue-900 text-center font-bold`,
+
+  // 3
+  pointsContainer: tw`flex-row items-end`,
+  pointsCount: tw`text-white text-4xl font-bold mr-2`,
+  pointsImage: [tw`mx-auto mb-4`, { resizeMode: "contain" }],
+  pointsButtonsGroup: tw`flex-row justify-between items-center my-4`,
+  pointsButton1: tw`text-white text-center font-bold border border-white rounded-md py-3 px-6 w-30`,
+  pointsButton2: tw`text-blue-900 text-center font-bold bg-white rounded-md py-3 px-6 w-30`,
 }

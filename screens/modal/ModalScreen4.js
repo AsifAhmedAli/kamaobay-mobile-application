@@ -9,11 +9,12 @@ import {
 import React, { useState } from "react"
 import tw from "twrnc"
 import { SafeAreaView } from "react-native-safe-area-context"
+import { modal } from "../../styles/AppStyles"
 
 const ModalScreen4 = () => {
   const [show, setShow] = useState(false)
   return (
-    <SafeAreaView style={tw`flex items-center justify-center`}>
+    <SafeAreaView style={modal.modal}>
       <Modal
         animationType="slide"
         transparent={true}
@@ -22,66 +23,58 @@ const ModalScreen4 = () => {
           setShow(!show)
         }}
       >
-        <View style={tw`m-auto p-8 bg-blue-900 h-5/6 w-11/12 rounded-lg`}>
+        <View style={modal.modalContainer}>
           <TouchableOpacity
-            style={tw`right-4 top-4 absolute`}
+            style={modal.modalClose}
             onPress={() => setShow(false)}
           >
             <Image
               source={require("../../assets/dashboard/modals/cross.png")}
-              style={[tw`h-7 w-7`, { resizeMode: "contain" }]}
+              style={modal.closeImage}
             />
           </TouchableOpacity>
-          <View style={tw`flex items-center justify-center mt-10`}>
-            <Text style={tw`text-white text-xl`}>Opps, Don't Loss Your Hope!</Text>
-            <View style={tw`flex-row items-end`}>
-              <Text style={tw`text-white text-4xl font-bold mr-2`}>00</Text>
-              <Text style={tw`text-white`}>Points</Text>
+          <View style={modal.header}>
+            <Text style={modal.headingText}>Opps, Don't Loss Your Hope!</Text>
+            <View style={modal.pointsContainer}>
+              <Text style={modal.pointsCount}>00</Text>
+              <Text style={modal.infoText}>Points</Text>
             </View>
-            <Text style={tw`text-white text-sm`}>22:00 am, 5th Dec 2021</Text>
+            <Text style={modal.dateTime}>22:00 am, 5th Dec 2021</Text>
           </View>
           <Image
             source={require("../../assets/dashboard/modals/loose.png")}
-            style={[tw`mx-auto mb-4`, { resizeMode: "contain" }]}
+            style={modal.pointsImage}
           />
 
-          <View style={tw`flex-row justify-between items-center my-4`}>
+          <View style={modal.pointsButtonsGroup}>
             <TouchableOpacity>
-              <Text
-                style={tw`text-white text-center font-bold border border-white rounded-md py-3 px-6 w-30`}
-              >
-                Claim
-              </Text>
+              <Text style={modal.pointsButton1}>Claim</Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text
-                style={tw`text-blue-900 text-center font-bold bg-white rounded-md py-3 px-6 w-30`}
-              >
-                New Task
-              </Text>
+              <Text style={modal.pointsButton2}>New Task</Text>
             </TouchableOpacity>
           </View>
           <View>
-            <View style={tw`flex-row items-center my-2`}>
+            <View style={modal.infoContainer}>
               <Image
                 source={require("../../assets/dashboard/modals/user.png")}
-                style={[tw`h-5 w-5 mr-4`, { resizeMode: "contain" }]}
+                style={modal.infoIcon}
               />
-              <Text style={tw`text-white`}>Fefreck Winsly!</Text>
+              <Text style={modal.infoText}>Fefreck Winsly!</Text>
             </View>
-            <View style={tw`flex-row items-center`}>
+            <View style={modal.infoContainer}>
               <Image
                 source={require("../../assets/dashboard/modals/id.png")}
-                style={[tw`h-5 w-5 mr-4`, { resizeMode: "contain" }]}
+                style={modal.infoIcon}
               />
-              <Text style={tw`text-white`}>#3455869</Text>
+              <Text style={modal.infoText}>#3455869</Text>
             </View>
-            <View style={tw`flex-row items-center my-2`}>
+            <View style={modal.infoContainer}>
               <Image
                 source={require("../../assets/dashboard/modals/task.png")}
-                style={[tw`h-5 w-5 mr-4`, { resizeMode: "contain" }]}
+                style={modal.infoIcon}
               />
-              <Text style={tw`text-white`}>Games</Text>
+              <Text style={modal.infoText}>Games</Text>
             </View>
           </View>
         </View>
@@ -95,4 +88,3 @@ const ModalScreen4 = () => {
 
 export default ModalScreen4
 
-const styles = StyleSheet.create({})
