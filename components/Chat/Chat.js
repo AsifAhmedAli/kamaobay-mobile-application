@@ -68,11 +68,10 @@ const Chat = () => {
   return (
     <View style={dashboardScreen.chatBackground}>
       <ScrollView style={tw`px-6`} showsVerticalScrollIndicator={false}>
-        <FlatList
-          data={data}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item: { id, name, time, image } }) => (
+        <View>
+          {data.map(({ id, name, time, image }) => (
             <TouchableOpacity
+              key={id}
               style={dashboardScreen.chatContainer}
               onPress={() => navigation.navigate("ChatScreen")}
             >
@@ -85,8 +84,8 @@ const Chat = () => {
               </View>
               <Text style={dashboardScreen.time}>{time}</Text>
             </TouchableOpacity>
-          )}
-        />
+          ))}
+        </View>
       </ScrollView>
     </View>
   )

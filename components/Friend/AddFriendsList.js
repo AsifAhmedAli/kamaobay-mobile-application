@@ -1,9 +1,4 @@
-import {
-  FlatList,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native"
+import { FlatList, Text, TouchableOpacity, View } from "react-native"
 import React from "react"
 import { Col, Grid, Row } from "react-native-easy-grid"
 import { dashboardScreen } from "../../styles/AppStyles"
@@ -57,43 +52,28 @@ const AddFriendsList = () => {
             <Text style={dashboardScreen.subColText}>Message</Text>
           </Col>
         </Row>
-        <FlatList
-          data={data}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item: { id, name } }) => (
-            <Row style={dashboardScreen.headingRow}>
+        <View>
+          {data.map(({ id, name }) => (
+            <Row key={id} style={dashboardScreen.headingRow}>
               <Col style={dashboardScreen.col1}>
                 <Text style={dashboardScreen.mainColTextTable}>{name}</Text>
               </Col>
               <Col style={dashboardScreen.col2}>
-                <TouchableOpacity
-                  style={dashboardScreen.friendsButton}
-                >
-                  <Text
-                    style={dashboardScreen.friendsButtonText}
-                  >
-                    Check
-                  </Text>
+                <TouchableOpacity style={dashboardScreen.friendsButton}>
+                  <Text style={dashboardScreen.friendsButtonText}>Check</Text>
                 </TouchableOpacity>
               </Col>
-              <Col style={ dashboardScreen.col3}>
-                <TouchableOpacity
-                  style={dashboardScreen.friendsButton}
-                >
-                  <Text
-                    style={dashboardScreen.friendsButtonText}
-                  >
-                    Send
-                  </Text>
+              <Col style={dashboardScreen.col3}>
+                <TouchableOpacity style={dashboardScreen.friendsButton}>
+                  <Text style={dashboardScreen.friendsButtonText}>Send</Text>
                 </TouchableOpacity>
               </Col>
             </Row>
-          )}
-        />
+          ))}
+        </View>
       </Grid>
     </View>
   )
 }
 
 export default AddFriendsList
-

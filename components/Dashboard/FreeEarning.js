@@ -39,7 +39,19 @@ const FreeEarning = () => {
   return (
     <View>
       <Text style={dashboardScreen.dashboardHeading}>Free</Text>
-      <FlatList
+      {data.map(({ id, text, image }) => (
+        <View key={id} style={dashboardScreen.earningListContainer}>
+          <Image source={image} style={dashboardScreen.earningImage} />
+          <View style={dashboardScreen.earningItem}>
+            <Text style={dashboardScreen.earningText}>{text}</Text>
+            <Image
+              source={require("../../assets/dashboard/option.png")}
+              style={dashboardScreen.earningOption}
+            />
+          </View>
+        </View>
+      ))}
+      {/* <FlatList
         data={data}
         keyExtractor={(item) => item.id}
         renderItem={({ item: { text, image } }) => (
@@ -54,7 +66,7 @@ const FreeEarning = () => {
             </View>
           </View>
         )}
-      />
+      /> */}
     </View>
   )
 }

@@ -42,11 +42,9 @@ const FriendsList = () => {
     },
   ]
   return (
-    <FlatList
-      data={data}
-      keyExtractor={(item) => item.id}
-      renderItem={({ item: { status, image } }) => (
-        <View style={dashboardScreen.friendContainer}>
+    <View>
+      {data.map(( { id,status, image }) => (
+        <View key={id} style={dashboardScreen.friendContainer}>
           <View style={dashboardScreen.friendContainerBackground}>
             <View
               style={tw`absolute z-50 right-4 top-4 border-2 border-white h-6 w-6 rounded-full ${
@@ -76,8 +74,9 @@ const FriendsList = () => {
             <Text style={dashboardScreen.friendText}>Challenge</Text>
           </TouchableOpacity>
         </View>
-      )}
-    />
+      ))}
+    </View>
+  
   )
 }
 

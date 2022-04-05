@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, View } from "react-native"
+import {  Image, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import tw from "twrnc"
 
@@ -38,23 +38,15 @@ const Earning = () => {
   return (
     <View>
       <Text style={tw`text-blue-900 text-xl font-bold my-4`}>How to earn</Text>
-      <FlatList
-        style={tw``}
-        data={data}
-        keyExtractor={(item) => item.id}
-        ItemSeparatorComponent={() => (
-          <View style={[tw`bg-gray-200`, { height: 0.5 }]} />
-        )}
-        renderItem={({ item: { text, image } }) => (
-          <View style={tw`flex-row items-center bg-white rounded-lg my-2 p-2`}>
+      {data.map(( { id,text, image }) => (
+       <View key={id} style={tw`flex-row items-center bg-white rounded-lg my-2 p-2`}>
             <Image
               source={image}
               style={[tw`h-10 w-14`, { resizeMode: "contain" }]}
             />
             <Text style={tw`text-blue-900 font-semibold`}>{text}</Text>
           </View>
-        )}
-      />
+      ))}
     </View>
   )
 }
